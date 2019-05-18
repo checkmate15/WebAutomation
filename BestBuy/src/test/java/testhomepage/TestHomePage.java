@@ -27,5 +27,48 @@ public class TestHomePage extends CommonAPI {
         testHome.setBrands();
     }
 
+    @Test
+    public void clickonDeals(){
+        testHome.setDeals();
+    }
+
+    @Test
+    public void clickonServices(){
+        testHome.setServices();
+    }
+
+    @Test
+    public void clickonAccount(){
+        testHome.setAccount();
+    }
+
+    @Test
+    public void clickonShoppingHistory(){
+        testHome.setShoppingHistory();
+    }
+
+    @Test
+    public void clickonOrderStatus(){
+        testHome.setOrderStatus();
+    }
+
+    @Test
+    public void clickonSavedIteams(){
+        testHome.setSavedItem();
+    }
+
+    @Test
+    public void clickonTodaysDeal(){
+        testHome.setTodaysDeal();
+    }
+    @Test
+    public void clickonGiftCard(){
+        testHome.setGiftCard();
+    }
+    @Test
+    public void clickonCareers(){
+        testHome.setCareers();
+    }
+
 
 }
