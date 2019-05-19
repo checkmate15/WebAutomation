@@ -6,7 +6,8 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends CommonAPI {
 
-    @FindBy(xpath = "//*[@id='menu0']")
+
+    @FindBy(xpath = "//*[@aria-controls='group0']")
     WebElement product;
 
     public void setProduct(){
