@@ -41,33 +41,48 @@ public class Homepage extends CommonAPI {
 
 
 
-    public void setSearch() { search.click(); }
+    public void setSearch() {
+        search.click(); }
 
-    public void setHamburger() { hamburger.click(); }
+    public void setHamburger() {
 
-    public void setOrderTab() { orderTab.click(); }
+        hamburger.click(); }
 
-    public void setSellTab() { sellTab.click(); }
+    public void setOrderTab() {
+        orderTab.click(); }
 
-    public void setRegistryTab() { registryTab.click(); }
+    public void setSellTab() {
+        sellTab.click(); }
 
-    public void setHelpTab() { helpTab.click(); }
+    public void setRegistryTab() {
+        registryTab.click(); }
 
-    public void setGiftcards() { giftcards.click(); }
+    public void setHelpTab() {
+        helpTab.click(); }
 
-    public void setTodaysdeals() { todaysdeals.click(); }
+    public void setGiftcards() {
+        giftcards.click(); }
 
-    public void setYourorders() { yourorders.click(); }
+    public void setTodaysdeals() {
+        todaysdeals.click(); }
 
-    public void setTryprime(){tryprime.click();}
+    public void setYourorders() {
+        yourorders.click(); }
 
-    public void setCart(){cart.click();}
+    public void setTryprime(){
+        tryprime.click();}
 
-    public void setAccount(){account.click();}
+    public void setCart(){
+        cart.click();}
 
-    public void setYouramazon(){youramazon.click();}
+    public void setAccount(){
+        account.click();}
 
-    public void setShopdeals(){shopdeals.click();}
+    public void setYouramazon(){
+        youramazon.click();}
+
+    public void setShopdeals(){
+        shopdeals.click();}
 
 }
 

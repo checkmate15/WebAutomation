@@ -4,7 +4,6 @@ import base.CommonAPI;
 import homepage.Homepage;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -18,54 +17,100 @@ public class Testhomepage extends CommonAPI {
         testamazon = PageFactory.initElements(driver, Homepage.class);
         driver.get(url);
 
+
     }
 
     @AfterClass
     public void init() {
         driver.get(url);
+
     }
 
     @Test
-    public void clickonsearch() { testamazon.setSearch(); }
+    public void clickonsearch() {
+        testamazon.setSearch();
+
+    }
 
     @Test
-    public void clickonhamburger() { testamazon.setHamburger(); }
+    public void clickonhamburger() {
+        testamazon.setHamburger();
+        navigateBack();
+    }
 
     @Test
-    public void clickonorderTab() { testamazon.setOrderTab(); }
+    public void clickonorderTab() {
+        testamazon.setOrderTab();
+        navigateBack();
+    }
 
     @Test
-    public void clickonsellTab() { testamazon.setSellTab(); }
+    public void clickonsellTab() {
+        testamazon.setSellTab();
+        navigateBack();
+    }
 
     @Test
-    public void clickonregistryTab() { testamazon.setRegistryTab(); }
+    public void clickonregistryTab() {
+        testamazon.setRegistryTab();
+        navigateBack();
+    }
 
     @Test
-    public void clickonhelpTab() { testamazon.setHelpTab(); }
+    public void clickonhelpTab() {
+        testamazon.setHelpTab();
+        navigateBack();
+    }
 
     @Test
-    public void clickongiftcards() { testamazon.setGiftcards(); }
+    public void clickongiftcards() {
+        testamazon.setGiftcards();
+        navigateBack();
+    }
 
     @Test
-    public void clickontodaysdeals() { testamazon.setTodaysdeals(); }
+    public void clickontodaysdeals() {
+        testamazon.setTodaysdeals();
+        navigateBack();
+    }
 
     @Test
-    public void clickonyourorders() { testamazon.setYourorders(); }
+    public void clickonyourorders() {
+        testamazon.setYourorders();
+        driver.navigate().to(url);
+    }
 
     @Test
-    public void clickontryprime(){testamazon.setTryprime();}
+    public void clickontryprime() {
+        testamazon.setTryprime();
+        navigateBack();
+    }
 
     @Test
-    public void clickoncart(){testamazon.setCart();}
+    public void clickoncart() {
+        testamazon.setCart();
+        navigateBack();
+
+    }
 
     @Test
-    public void clickonaccount(){testamazon.setAccount();}
+    public void clickonaccount() {
+        testamazon.setAccount();
+        driver.navigate().to(url);
+
+    }
 
     @Test
-    public void clickonyouramazon(){testamazon.setYouramazon();}
+    public void clickonyouramazon() {
+        testamazon.setYouramazon();
+        driver.navigate().to(url);
+    }
 
     @Test
-    public void clickonshopdeals(){testamazon.setShopdeals();}
+    public void clickonshopdeals() {
+        testamazon.setShopdeals();
+        navigateBack();
+    }
 
 
 }
