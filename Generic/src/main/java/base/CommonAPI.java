@@ -33,38 +33,86 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class CommonAPI {
+    //*************reporting***************
+
+    public static ExtentReports extent;
+
+    @BeforeSuite
+    /**
+     * This method create path of directory to store the result into Html file
+     * @param Extent and setOutputDirectory class connected with new obj extent and geting instance.
+     * @Author -Apu
+     */
+    public void extentSetup(ITestContext context) {
+        ExtentManager.setOutputDirectory(context);
+        extent = ExtentManager.getInstance();
+    }
+    @BeforeMethod
+    public void startExtent(Method method) {
+        String className = method.getDeclaringClass().getSimpleName();
+        ExtentTestManager.startTest(method.getName());
+        ExtentTestManager.getTest().assignCategory(className);
+    }
+    protected String getStackTrace(Throwable t) {
+        StringWriter sw = new StringWriter();
+        PrintWriter pw = new PrintWriter(sw);
+        t.printStackTrace(pw);
+        return sw.toString();
+    }
+
+    @AfterMethod
+    public void afterEachTestMethod(ITestResult result) {
+        ExtentTestManager.getTest().getTest().setStartedTime(getTime(result.getStartMillis()));
+        ExtentTestManager.getTest().getTest().setEndedTime(getTime(result.getEndMillis()));
+        for (String group : result.getMethod().getGroups()) {
+            ExtentTestManager.getTest().assignCategory(group);
+        }
+
+        if (result.getStatus() == 1) {
+            ExtentTestManager.getTest().log(LogStatus.PASS, "Test Passed");
+        } else if (result.getStatus() == 2) {
+            ExtentTestManager.getTest().log(LogStatus.FAIL, getStackTrace(result.getThrowable()));
+        } else if (result.getStatus() == 3) {
+            ExtentTestManager.getTest().log(LogStatus.SKIP, "Test Skipped");
+        }
+
+       /* ExtentTestManager.endTest();
+        extent.flush();
+        if (result.getStatus() == ITestResult.FAILURE) {
+            captureScreenshot(driver, result.getName());
+        }*/
+    }
+    @AfterSuite
+    public void generateReport() {
+        extent.close();
+    }
+
+    private Date getTime(long millis) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(millis);
+        return calendar.getTime();
+    }
+
+    /*************Reporting **********/
+
+
+
+
+
+
+    public static WebDriver driver = null;
     public static final String BROWSERSTACK_USERNAME = "";
     public static final String BROWSERSTACK_AUTOMATE_KEY = "";
     public static final String SAUCE_USERNAME = "";
     public static final String SAUCE_AUTOMATE_KEY = "";
     public static final String BROWSERSTACK_URL = "https://" + BROWSERSTACK_USERNAME + ":" + BROWSERSTACK_AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
     public static final String SAUCE_URL = "https://" + SAUCE_USERNAME + ":" + SAUCE_AUTOMATE_KEY + "@ondemand.saucelabs.com:80/wd/hub";
-    public static WebDriver driver = null;
+
     //Extent Report Setup
-    public static ExtentReports extent;
-
-    //screenshot
-    public static void captureScreenshot(WebDriver driver, String screenshotName) {
-
-        DateFormat df = new SimpleDateFormat("(MM.dd.yyyy-HH:mma)");
-        Date date = new Date();
-        df.format(date);
-
-        File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        try {
-            FileUtils.copyFile(file, new File(System.getProperty("user.dir") + "/screenshots/" + screenshotName + " " + df.format(date) + ".png"));
-            System.out.println("Screenshot captured");
-        } catch (Exception e) {
-            System.out.println("Exception while taking screenshot " + e.getMessage());
-            ;
-        }
-
-    }
-
     @Parameters({"platform", "url", "browser", "cloud", "browserVersion", "envName"})
-    @BeforeMethod
+    @BeforeClass
     public static WebDriver setupDriver(String platform, String url, @Optional("chrome") String browser, @Optional("false") boolean cloud, String browserVersion, String envName) throws MalformedURLException {
-        if (cloud) {
+        if (cloud==true) {
             driver = getCloudDriver(browser, browserVersion, platform, envName);
         } else {
             driver = getLocalDriver(browser, platform);
@@ -120,7 +168,7 @@ public class CommonAPI {
      * @param driver The webdriver instance
      * @Author - peoplenTech
      */
-    public static void getScreenshot(WebDriver driver) {
+   /* public static void getScreenshot(WebDriver driver) {
         DateFormat df = new SimpleDateFormat("(MM.dd.yyyy-HH:mma)");
         Date date = new Date();
         String name = df.format(date);
@@ -130,7 +178,7 @@ public class CommonAPI {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     public static String convertToString(String st) {
         String splitString = "";
@@ -213,67 +261,69 @@ public class CommonAPI {
             }
         }
     }
+    //screenshot
+    public static void captureScreenshot(WebDriver driver, String screenshotName) {
 
-    //****************************
+        DateFormat df = new SimpleDateFormat("(MM.dd.yyyy-HH:mma)");
+        Date date = new Date();
+        df.format(date);
 
-    @BeforeSuite
-    public void extentSetup(ITestContext context) {
-        ExtentManager.setOutputDirectory(context);
-        extent = ExtentManager.getInstance();
-    }
-
-    @BeforeMethod
-    public void startExtent(Method method) {
-        String className = method.getDeclaringClass().getSimpleName();
-        ExtentTestManager.startTest(method.getName());
-        ExtentTestManager.getTest().assignCategory(className);
-    }
-
-    protected String getStackTrace(Throwable t) {
-        StringWriter sw = new StringWriter();
-        PrintWriter pw = new PrintWriter(sw);
-        t.printStackTrace(pw);
-        return sw.toString();
-    }
-
-    @AfterMethod
-    public void afterEachTestMethod(ITestResult result) {
-        ExtentTestManager.getTest().getTest().setStartedTime(getTime(result.getStartMillis()));
-        ExtentTestManager.getTest().getTest().setEndedTime(getTime(result.getEndMillis()));
-        for (String group : result.getMethod().getGroups()) {
-            ExtentTestManager.getTest().assignCategory(group);
+        File file = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(file, new File(System.getProperty("user.dir") + "/screenshots/" + screenshotName + " " + df.format(date) + ".png"));
+            System.out.println("Screenshot captured");
+        } catch (Exception e) {
+            System.out.println("Exception while taking screenshot " + e.getMessage());
+            ;
         }
 
-        if (result.getStatus() == 1) {
-            ExtentTestManager.getTest().log(LogStatus.PASS, "Test Passed");
-        } else if (result.getStatus() == 2) {
-            ExtentTestManager.getTest().log(LogStatus.FAIL, getStackTrace(result.getThrowable()));
-        } else if (result.getStatus() == 3) {
-            ExtentTestManager.getTest().log(LogStatus.SKIP, "Test Skipped");
-        }
-
-        ExtentTestManager.endTest();
-        extent.flush();
-        if (result.getStatus() == ITestResult.FAILURE) {
-            captureScreenshot(driver, result.getName());
-        }
     }
 
-    private Date getTime(long millis) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(millis);
-        return calendar.getTime();
-    }
 
-    @AfterSuite
-    public void generateReport() {
-        extent.close();
-    }
 
-    @AfterMethod
-    public void quitDriver() {
-        driver.close();
+
+
+
+
+
+    @AfterClass
+    public void cleanup() {
+        //driver.close();
         driver.quit();
+    }
+    //Type/////////
+    public void typeOnCss(String locator, String value) {
+        driver.findElement(By.cssSelector(locator)).sendKeys(value);
+    }
+
+    public void typeOnID(String locator, String value) {
+        driver.findElement(By.id(locator)).sendKeys(value);
+    }
+
+    public void typeOnElement(String locator, String value , WebDriver dv1) {
+        try {
+            dv1.findElement(By.cssSelector(locator)).sendKeys(value,Keys.ENTER);
+        } catch (Exception ex1) {
+            try {
+                System.out.println("First Attempt was not successful");
+                dv1.findElement(By.name(locator)).sendKeys(value,Keys.ENTER);
+            } catch (Exception ex2) {
+                try {
+                    System.out.println("Second Attempt was not successful");
+                    dv1.findElement(By.xpath(locator)).sendKeys(value, Keys.ENTER);
+                } catch (Exception ex3) {
+                    System.out.println("Third Attempt was not successful");
+                    dv1.findElement(By.id(locator)).sendKeys(value,Keys.ENTER);
+                }
+            }
+        }
+    }
+    public void clearField(String locator) {
+        driver.findElement(By.id(locator)).clear();
+    }
+
+    public void navigateBack() {
+        driver.navigate().back();
     }
 
     /**
@@ -483,41 +533,9 @@ public class CommonAPI {
         driver.findElement(By.cssSelector(locator)).sendKeys(Keys.ENTER);
     }
 
-    //type
-    public void typeOnCss(String locator, String value) {
-        driver.findElement(By.cssSelector(locator)).sendKeys(value);
-    }
 
-    public void typeOnID(String locator, String value) {
-        driver.findElement(By.id(locator)).sendKeys(value);
-    }
 
-    public void typeOnElement(String locator, String value) {
-        try {
-            driver.findElement(By.cssSelector(locator)).sendKeys(value);
-        } catch (Exception ex1) {
-            try {
-                System.out.println("First Attempt was not successful");
-                driver.findElement(By.name(locator)).sendKeys(value);
-            } catch (Exception ex2) {
-                try {
-                    System.out.println("Second Attempt was not successful");
-                    driver.findElement(By.xpath(locator)).sendKeys(value);
-                } catch (Exception ex3) {
-                    System.out.println("Third Attempt was not successful");
-                    driver.findElement(By.id(locator)).sendKeys(value);
-                }
-            }
-        }
-    }
 
-    public void clearField(String locator) {
-        driver.findElement(By.id(locator)).clear();
-    }
-
-    public void navigateBack() {
-        driver.navigate().back();
-    }
 
     public void typeOnInputBox(String locator, String value) {
         try {
