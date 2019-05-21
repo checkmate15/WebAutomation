@@ -62,8 +62,8 @@ public class CommonAPI {
     }
 
     @Parameters({"platform", "url", "browser", "cloud", "browserVersion", "envName"})
-    @BeforeMethod
-    public static WebDriver setupDriver(String platform, String url, @Optional("chrome") String browser, @Optional("false") boolean cloud, String browserVersion, String envName) throws MalformedURLException {
+    @BeforeClass
+    public static WebDriver setupDriver( String platform, String url, String browser, @Optional("false") boolean cloud,  String browserVersion, String envName) throws MalformedURLException {
         if (cloud) {
             driver = getCloudDriver(browser, browserVersion, platform, envName);
         } else {
@@ -108,8 +108,8 @@ public class CommonAPI {
             System.setProperty("webdriver.chrome.driver", "../Generic/src/main/resources/drivers/chromedriver.exe");
         }
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(5000, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         return driver;
     }
@@ -270,9 +270,9 @@ public class CommonAPI {
         extent.close();
     }
 
-    @AfterMethod
+    @AfterClass
     public void quitDriver() {
-        driver.close();
+//        driver.close();
         driver.quit();
     }
 
