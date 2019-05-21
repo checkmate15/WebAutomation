@@ -1,6 +1,7 @@
 package homepage;
 
 import base.CommonAPI;
+import com.sun.org.apache.xpath.internal.operations.Div;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
@@ -55,6 +56,61 @@ public class HomePage extends CommonAPI {
     WebElement homekicthen;
     @FindBy(xpath = "//*[@title='Shoes & Accessories']")
     WebElement shoes;
+    @FindBy(xpath = "//*[@class='item-image zoom-wrap']")
+    WebElement jacket;
+    @FindBy(xpath ="//*[@title='New huawei mobile phones prices in china  Arrival Huawei Mate 20 Pro, 6GB+128GB, Triple Back Cameras']" )
+    WebElement huwaeimobile;
+    @FindBy(xpath ="//*[@title='5.7 inch 6G+128G 9000mah Android 8.1 Rugged Phone,Rugged Smartphone , Android8.1 rugged mobile phone with walkie-talkie PTt']")
+    WebElement Sphone;
+    @FindBy(xpath = "//*[@title='Trulyplus Newest Technology i9s Earphone BT 5.0  Mini TWS Stereo Wireless Earbuds']")
+    WebElement earpod;
+    @FindBy(xpath = "//*[@id=\"home2017_services\"]/div[1]/div[2]/ul[1]/li[1]/a[1]")
+    WebElement indea;
+
+    @FindBy(xpath = "//*[@id=\"home2017_services\"]/div[1]/div[2]/ul[1]/li[6]/a[1]")
+    WebElement vietnum;
+
+    public void setVietnum(){
+        if(vietnum.isDisplayed())
+            Assert.assertTrue(true);
+        vietnum.click();
+
+    }
+
+
+    public void setIndea(){
+        indea.click();    }
+
+    public void setEarpod(){
+        earpod.click();
+
+    }
+    public void setSearchh(String name){
+        if(search.isEnabled())
+            search.sendKeys(name, Keys.ENTER);
+
+    }
+
+    public void setSphone(){
+        if(Sphone.isDisplayed()){
+            System.out.println("passed");
+        }else
+            System.out.println("Failed");
+    }
+
+
+    public void setHuwaeimobile(){
+        huwaeimobile.click();
+    }
+
+    public void setJacket(){
+        jacket.click();
+        if(jacket.isDisplayed()) {
+            System.out.println("passed");
+        }else
+            System.out.println("failed");
+
+    }
 
 
 

@@ -81,6 +81,42 @@ public class TestHomePage extends CommonAPI {
     @Test
     public void clickhomekicthen(){
         testalibaba.setHomekicthen();
+
+    }
+    @Test
+    public void clickjacket(){
+        testalibaba.setJacket();
+
+    }
+    @Test
+    public void clickhuwaweimobile(){
+        testalibaba.setHuwaeimobile();
+        driver.navigate().to(url);
+    }
+    @Test
+    public void checkSphone(){
+        testalibaba.setSphone();
+        driver.navigate().to(url);
+    }
+    @Test
+    public void clickearpod(){
+        testalibaba.setEarpod();
+        driver.navigate().to(url);
+    }
+    @Test
+    public void searchfor(){
+        testalibaba.setSearchh("ball");
+        driver.navigate().to(url);
+    }
+    @Test
+    public void clickindea(){
+        testalibaba.setIndea();
+        driver.navigate().to(url);
+    }
+    @Test
+    public void clickvietnum(){
+        testalibaba.setVietnum();
+        driver.navigate().to(url);
     }
 
     /*@Test
