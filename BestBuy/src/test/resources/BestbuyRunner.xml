@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="amazon" parallel="false">
+<suite name="Best Buy" parallel="false">
 
     <parameter name="cloud" value="false"/>
     <parameter name="envName" value="browserstack"/>
@@ -10,7 +10,7 @@
 <!--    <parameter name="os_version" value="Sierra"/>-->
     <parameter name="browser" value="chrome-options"/>
     <parameter name="browserVersion" value="74"/>
-    <parameter name="url" value="https://www.bestbuy.com"/>
+    <parameter name="url" value="https://bestbuy.com"/>
 
     <test name="BestBuy Web test">
         <classes>
