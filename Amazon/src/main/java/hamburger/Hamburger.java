@@ -1,17 +1,18 @@
-package homepage;
+package hamburger;
 
 import base.CommonAPI;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.testng.Assert;
 
-public class Homepage1 extends CommonAPI {
+public class Hamburger extends CommonAPI {
 
-    @FindBy(xpath = "//*[@id='nav-hamburger-menu']")
+    @FindBy(xpath = "//i[@class='hm-icon nav-sprite']")
     WebElement hamburger;
 
-    @FindBy(xpath = "//*[@id='hmenu-content']")
+    @FindBy(xpath = "//a[@data-menu-id='13']")
     WebElement electronics;
+    @FindBy(xpath = "//*[@class='hmenu-item']")
+    WebElement phones;
 
 
     public void setHamburger() {
@@ -20,4 +21,8 @@ public class Homepage1 extends CommonAPI {
     public void setElectronics(){
         electronics.click();
     }
+    public void setPhones(){
+        phones.click();
+    }
+
 }

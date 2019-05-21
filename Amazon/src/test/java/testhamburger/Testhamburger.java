@@ -1,19 +1,20 @@
-package testhomepage;
+package testhamburger;
 
 import base.CommonAPI;
-import homepage.Homepage1;
+import hamburger.Hamburger;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Testhomepage1 extends CommonAPI {
+public class Testhamburger extends CommonAPI {
+
     String url = "https://www.amazon.com/";
-    Homepage1 testamazon1;
+    Hamburger testamazon1;
 
     @BeforeClass
     public void initialize() {
-        testamazon1 = PageFactory.initElements(driver, Homepage1.class);
+        testamazon1 = PageFactory.initElements(driver,Hamburger .class);
         driver.get(url);
 
 
@@ -21,19 +22,22 @@ public class Testhomepage1 extends CommonAPI {
 
     @AfterClass
     public void init() {
+
         driver.get(url);
     }
 
-    @Test
+    @Test(priority = 1)
     public void clickonhamburger() {
         testamazon1.setHamburger();
     }
-    @Test
+    @Test(priority = 2)
     public void clickonelectronics(){
         testamazon1.setElectronics();
     }
-
-
+    @Test(priority = 3)
+    public void clickonphones(){
+        testamazon1.setPhones();
     }
 
 
+}

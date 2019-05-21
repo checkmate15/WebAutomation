@@ -26,90 +26,90 @@ public class Testhomepage extends CommonAPI {
 
     }
 
-    @Test
+    @Test(priority = 1)
     public void clickonsearch() {
         testamazon.setSearch();
 
     }
 
-    @Test
+    @Test(priority = 2)
     public void clickonhamburger() {
         testamazon.setHamburger();
-        navigateBack();
+        driver.navigate().to(url);
     }
 
-    @Test
+    @Test(priority = 2)
     public void clickonorderTab() {
         testamazon.setOrderTab();
-        navigateBack();
+        driver.navigate().to(url);
     }
 
-    @Test
+    @Test(priority = 3)
     public void clickonsellTab() {
         testamazon.setSellTab();
-        navigateBack();
+        driver.navigate().to(url);
     }
 
-    @Test
+    @Test(priority = 4)
     public void clickonregistryTab() {
         testamazon.setRegistryTab();
-        navigateBack();
+        driver.navigate().to(url);
     }
 
-    @Test
+    @Test(priority = 5)
     public void clickonhelpTab() {
         testamazon.setHelpTab();
-        navigateBack();
+        driver.navigate().to(url);
     }
 
-    @Test
+    @Test(priority = 6)
     public void clickongiftcards() {
         testamazon.setGiftcards();
-        navigateBack();
+        driver.navigate().to(url);
     }
 
-    @Test
+    @Test(priority = 7)
     public void clickontodaysdeals() {
         testamazon.setTodaysdeals();
-        navigateBack();
+        driver.navigate().to(url);
     }
 
-    @Test
+    @Test(priority = 8)
     public void clickonyourorders() {
         testamazon.setYourorders();
         driver.navigate().to(url);
     }
 
-    @Test
+    @Test(priority = 9)
     public void clickontryprime() {
         testamazon.setTryprime();
-        navigateBack();
+        driver.navigate().to(url);
     }
 
-    @Test
+    @Test(priority = 10)
     public void clickoncart() {
         testamazon.setCart();
-        navigateBack();
+        driver.navigate().to(url);
 
     }
 
-    @Test
+    @Test(priority = 11)
     public void clickonaccount() {
         testamazon.setAccount();
         driver.navigate().to(url);
 
     }
 
-    @Test
+    @Test(priority = 12)
     public void clickonyouramazon() {
         testamazon.setYouramazon();
         driver.navigate().to(url);
     }
 
-    @Test
+    @Test(priority = 13)
     public void clickonshopdeals() {
         testamazon.setShopdeals();
-        navigateBack();
+        driver.navigate().to(url);
     }
 
 
