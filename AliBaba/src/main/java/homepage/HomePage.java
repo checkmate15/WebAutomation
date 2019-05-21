@@ -21,7 +21,7 @@ public class HomePage extends CommonAPI {
     WebElement construction;
     @FindBy(xpath = "//*[@title='Lights & Lighting']")
     WebElement lights;
-    @FindBy(xpath = "//*[@title='Furniture']")
+    @FindBy(xpath ="//*[@title='Furniture']" )
     WebElement furniture;
     @FindBy(xpath = "//*[@title='Vehicles & Accessories']")
     WebElement vehicles;
@@ -49,6 +49,35 @@ public class HomePage extends CommonAPI {
     WebElement search;
     @FindBy(xpath = "//*[@id=\"scc-category-unit-index\"]/div[1]/ul[1]/li[2]/a[1]")
     WebElement Apparel;
+    @FindBy(xpath = "//*[@title='Sports & Entertainment']")
+    WebElement sports;
+    @FindBy(xpath = "//*[@title='Home & Kitchen']")
+    WebElement homekicthen;
+    @FindBy(xpath = "//*[@title='Shoes & Accessories']")
+    WebElement shoes;
+
+
+
+
+    public void setShoes(){
+         if(shoes.isDisplayed())
+             shoes.click();
+         String title =driver.getTitle();
+        System.out.println(title );
+    }
+
+
+    public void setHomekicthen(){
+        if(homekicthen.isEnabled())
+            homekicthen.click();
+        String url =driver.getCurrentUrl();
+        System.out.println(url);
+    }
+    public void setSports(){
+        sports.click();
+    }
+
+
 
     public void setApparel(){
         Apparel.click();

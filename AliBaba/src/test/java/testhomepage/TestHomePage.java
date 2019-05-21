@@ -26,7 +26,9 @@ public class TestHomePage extends CommonAPI {
 
     @Test
     public void clickcategoris(){
+
         testalibaba.setCategoris();
+
     }
     @Test
     public void clicktradeshow(){
@@ -35,7 +37,7 @@ public class TestHomePage extends CommonAPI {
     @Test
     public void clickgetapp(){
         testalibaba.setGetapp();
-        driver.navigate().forward();
+
 
     }
     @Test
@@ -52,7 +54,7 @@ public class TestHomePage extends CommonAPI {
         testalibaba.setServiceandmembership();
     }
     @Test
-    public void clickonhelp(){
+    public void  clickonhelp(){
         testalibaba.setHelpcommuinity();
     }
     @Test
@@ -68,6 +70,19 @@ public class TestHomePage extends CommonAPI {
     public void clickapparel(){
         testalibaba.setApparel();
     }
+    @Test
+    public void clickshoes(){
+        testalibaba.setShoes();
+    }
+    @Test
+    public void clicksports(){
+        testalibaba.setSports();
+    }
+    @Test
+    public void clickhomekicthen(){
+        testalibaba.setHomekicthen();
+    }
+
     /*@Test
     public void clickonsignIn(){
         testalibaba.setSingIn();
