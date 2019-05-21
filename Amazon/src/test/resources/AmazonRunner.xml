@@ -12,8 +12,7 @@
 
     <test name="Amazon home">
         <classes>
-            <class name="testhomepage.Testhomepage"/>
-<!--            <class name=""></class>-->
+           <class name="testhomepage.Testhomepage1"/>
 
         </classes>
     </test>
