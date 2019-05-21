@@ -14,7 +14,7 @@
     <parameter name="url" value="https://www.alibaba.com/"/>
 
     <test name="AliBaba">
-        <parameter name="url" value="https://www.alibaba.com/"/>
+        <parameter name="url" value ="https://www.alibaba.com/"/>
         <classes>
             <class name="testhomepage.TestHomePage"/>
         </classes>

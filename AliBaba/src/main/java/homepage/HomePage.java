@@ -11,25 +11,25 @@ import org.testng.Assert;
 import java.security.Key;
 
 public class HomePage extends CommonAPI {
-    @FindBy(xpath ="//*[@title='Home & Garden']")
-    WebElement homegurden;
-    @FindBy(xpath = "//*[@title='Gifts & Crafts']")
-    WebElement giftcarfts;
+    @FindBy(xpath ="//*[@id=\"scc-category-unit-index\"]/div[1]/ul[1]/li[4]/a[1]")
+    WebElement machinary;
+    @FindBy(xpath = "//*[@id=\"scc-category-unit-index\"]/div[1]/ul[1]/li[1]/a[1]")
+    WebElement consumer;
 
-    @FindBy(xpath = "//*[@title='Textiles & Leather Products']")
-    WebElement textiles;
-    @FindBy(xpath = "//*[@title='Construction & Real Estate']")
-    WebElement construction;
-    @FindBy(xpath = "//*[@title='Lights & Lighting']")
-    WebElement lights;
-    @FindBy(xpath ="//*[@title='Furniture']" )
+    @FindBy(xpath = "//*[@id=\"recommendation-for-you\"]/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/h2[1]/a[1]")
+    WebElement blackview;
+    @FindBy(xpath = "//*[@id=\"recommendation-for-you\"]/div[2]/div[1]/div[1]/div[6]/div[1]/div[1]/div[2]/h2[1]/a[1]")
+    WebElement oukitel;
+    @FindBy(xpath = "//*[@id=\"recommendation-for-you\"]/div[2]/div[1]/div[1]/div[4]/div[1]/div[1]/div[2]/h2[1]/a[1]")
+    WebElement foldphone;
+    @FindBy(xpath ="//*[@id=\"scc-category-unit-index\"]/div[1]/ul[1]/li[7]/a[1]" )
     WebElement furniture;
-    @FindBy(xpath = "//*[@title='Vehicles & Accessories']")
+    @FindBy(xpath = "//*[@id=\"scc-category-unit-index\"]/div[1]/ul[1]/li[7]/a[1]")
     WebElement vehicles;
     @FindBy(xpath = "//*[@id='J_SC_header']")
     WebElement singIn;
-    @FindBy(xpath = "//*[@title='Industrial Machinery']")
-    WebElement industrialmachinery;
+    @FindBy(xpath = "//*[@id=\"recommendation-for-you\"]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/h2[1]/a[1]")
+    WebElement androidphone;
     @FindBy(xpath = "//*[@id=\"J_SC_header\"]/header[1]/div[2]/div[1]/div[1]/div[1]/h3[1]")
     WebElement categoris;
     @FindBy(xpath = "//*[@id=\"J_SC_header\"]/header[1]/div[1]/div[5]/ul[1]/li[3]/a[1]")
@@ -50,25 +50,54 @@ public class HomePage extends CommonAPI {
     WebElement search;
     @FindBy(xpath = "//*[@id=\"scc-category-unit-index\"]/div[1]/ul[1]/li[2]/a[1]")
     WebElement Apparel;
-    @FindBy(xpath = "//*[@title='Sports & Entertainment']")
+    @FindBy(xpath = "//*[@id=\"scc-category-unit-index\"]/div[1]/ul[1]/li[8]/a[1]")
     WebElement sports;
-    @FindBy(xpath = "//*[@title='Home & Kitchen']")
+    @FindBy(xpath = "//*[@id=\"scc-category-unit-index\"]/div[1]/ul[1]/li[6]/a[1]")
     WebElement homekicthen;
-    @FindBy(xpath = "//*[@title='Shoes & Accessories']")
+    @FindBy(xpath = "//*[@id=\"scc-category-unit-index\"]/div[1]/ul[1]/li[8]/a[1]")
     WebElement shoes;
     @FindBy(xpath = "//*[@class='item-image zoom-wrap']")
     WebElement jacket;
-    @FindBy(xpath ="//*[@title='New huawei mobile phones prices in china  Arrival Huawei Mate 20 Pro, 6GB+128GB, Triple Back Cameras']" )
+    @FindBy(xpath ="//*[@id=\"recommendation-for-you\"]/div[2]/div[1]/div[1]/div[5]/div[1]/div[1]/div[2]/h2[1]/a[1]" )
     WebElement huwaeimobile;
-    @FindBy(xpath ="//*[@title='5.7 inch 6G+128G 9000mah Android 8.1 Rugged Phone,Rugged Smartphone , Android8.1 rugged mobile phone with walkie-talkie PTt']")
+    @FindBy(xpath ="//*[@id=\"recommendation-for-you\"]/div[2]/div[1]/div[1]/div[8]/div[1]/div[1]/div[2]/h2[1]/a[1]")
     WebElement Sphone;
-    @FindBy(xpath = "//*[@title='Trulyplus Newest Technology i9s Earphone BT 5.0  Mini TWS Stereo Wireless Earbuds']")
-    WebElement earpod;
+    @FindBy(xpath = "//*[@id=\"recommendation-for-you\"]/div[2]/div[1]/div[1]/div[9]/div[1]/div[1]/div[2]/h2[1]/a[1]")
+    WebElement iphonexr;
     @FindBy(xpath = "//*[@id=\"home2017_services\"]/div[1]/div[2]/ul[1]/li[1]/a[1]")
     WebElement indea;
 
     @FindBy(xpath = "//*[@id=\"home2017_services\"]/div[1]/div[2]/ul[1]/li[6]/a[1]")
     WebElement vietnum;
+    @FindBy(xpath = "//*[@id=\"home2017_services\"]/div[1]/div[2]/ul[1]/li[2]/a[1]")
+    WebElement USA;
+    @FindBy(xpath = "//*[@id=\"ui-footer\"]/div[1]/div[2]/dl[1]/dd[1]/a[1]")
+    WebElement aboutalibaba;
+    @FindBy(xpath = "//*[@id=\"home2017_services\"]/div[1]/div[2]/ul[1]/li[3]/a[1]")
+    WebElement turkey;
+
+    public void setTurkey(){
+        if(turkey.isDisplayed()){
+            System.out.println(("passed"));
+        }else
+            System.out.println("failed");
+
+    }
+
+    public void setAboutalibaba(){
+        if(aboutalibaba.isDisplayed()) {
+            System.out.println("Passed");
+        }else
+            System.out.println("Failed");
+    }
+
+
+    public void setUSA(){
+        if(USA.isDisplayed())
+            Assert.assertTrue(true );
+
+
+    }
 
     public void setVietnum(){
         if(vietnum.isDisplayed())
@@ -81,8 +110,8 @@ public class HomePage extends CommonAPI {
     public void setIndea(){
         indea.click();    }
 
-    public void setEarpod(){
-        earpod.click();
+    public void setIphonexr(){
+        iphonexr.click();
 
     }
     public void setSearchh(String name){
@@ -190,34 +219,38 @@ public class HomePage extends CommonAPI {
 
 
     }
-    
-
-
-
-   /* public void setHomegurden(){homegurden.click();}
-    public void setGiftcarfts(){
-        giftcarfts.click();
-    }
-
-    public void setTextiles(){
-        textiles.click();
-    }
-    public void setConstruction(){ construction.click(); }
-    public void setLights(){
-        lights.click();
-    }
-    public void  setFurniture(){
-        furniture.click();
+    public void setSingIn(){
+        singIn.click();
     }
     public void setVehicles(){
         vehicles.click();
     }
-    public void setSingIn(){
-        singIn.click();
+    public void setMachinary(){
+        machinary.click();
     }
-    public void setIndustrialmachinery(){
-        industrialmachinery.click();
-    }*/
+    public void setConsumer(){
+        consumer.click();
+    }
+    public void setAndroidphone() {
+        if (androidphone.isEnabled())
+            androidphone.click();
+    }
+    public void setBlackview(){
+        blackview.click();
+        String title = driver.getTitle();
+        System.out.println(title);
+    }
+    public void setfoldphone(){
+        if(foldphone.isDisplayed())
+            Assert.assertTrue(true);
+        foldphone.click();
+
+    }
+    public void setoukitel(){
+        oukitel.click();
+    }
+    
+
 
 
 }

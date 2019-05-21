@@ -28,6 +28,7 @@ public class TestHomePage extends CommonAPI {
     public void clickcategoris(){
 
         testalibaba.setCategoris();
+        driver.navigate().to(url);
 
     }
     @Test
@@ -99,8 +100,8 @@ public class TestHomePage extends CommonAPI {
         driver.navigate().to(url);
     }
     @Test
-    public void clickearpod(){
-        testalibaba.setEarpod();
+    public void clickiphone(){
+        testalibaba.setIphonexr();
         driver.navigate().to(url);
     }
     @Test
@@ -118,43 +119,57 @@ public class TestHomePage extends CommonAPI {
         testalibaba.setVietnum();
         driver.navigate().to(url);
     }
-
-    /*@Test
+    @Test
     public void clickonsignIn(){
         testalibaba.setSingIn();
-    }
-    @Test
-    public void clickhomegurden(){
-        testalibaba.setHomegurden();
-    }
-    @Test
-    public void clickgiftcarfts(){
-        testalibaba.setGiftcarfts();
-    }
-    @Test
-    public void clickfurniture(){
-        testalibaba.setFurniture();
-    }
-    @Test
-    public void clicklights(){
-        testalibaba.setLights();
     }
     @Test
     public void clickvehicles(){
         testalibaba.setVehicles();
     }
     @Test
-    public void clicktextiles(){
-        testalibaba.setTextiles();
+    public void clickmachinary(){
+        testalibaba.setMachinary();
     }
     @Test
-    public void clickconstruction(){
-        testalibaba.setConstruction();
+    public void clickconsumer(){
+        testalibaba.setConsumer();
+
     }
     @Test
-    public void clickindusmechinery(){
-        testalibaba.setIndustrialmachinery();
-    }*/
+    public void clickandroid() {
+        testalibaba.setAndroidphone();
+        driver.navigate().to(url);
+    }
+    @Test
+    public void clickblackview() {
+        testalibaba.setBlackview();
+        driver.navigate().to(url);
+    }
+    @Test
+    public void clickfoldedphone(){
+        testalibaba.setfoldphone();
+        driver.navigate().to(url);
+    }
+    @Test
+    public void clickoukitel() {
+        testalibaba.setoukitel();
+        driver.navigate().to(url);
+    }
+    @Test
+    public void checkUSA(){
+        testalibaba.setUSA();
+
+    }
+    @Test
+    public void checkaboutalibaba() {
+        testalibaba.setAboutalibaba();
+    }
+    @Test
+    public void cleckturkry(){
+        testalibaba.setTurkey();
+    }
 
 
-}
+    }
+
