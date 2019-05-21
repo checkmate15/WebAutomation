@@ -23,7 +23,52 @@ public class TestHomePage extends CommonAPI {
     public void init(){
         driver.get(url);
     }
+
     @Test
+    public void clickcategoris(){
+        testalibaba.setCategoris();
+    }
+    @Test
+    public void clicktradeshow(){
+        testalibaba.setTradeshows();
+    }
+    @Test
+    public void clickgetapp(){
+        testalibaba.setGetapp();
+        driver.navigate().forward();
+
+    }
+    @Test
+    public void clicklanguage(){
+        testalibaba.setLanguage();
+        //TestHomePage.captureScreenshot(driver, "1st try");
+    }
+    @Test
+    public void clicksolutions(){
+        testalibaba.setSourcingSolution();
+    }
+    @Test
+    public void clcikonmembership(){
+        testalibaba.setServiceandmembership();
+    }
+    @Test
+    public void clickonhelp(){
+        testalibaba.setHelpcommuinity();
+    }
+    @Test
+    public void checkproducts(){
+        testalibaba.setProducts();
+    }
+    @Test
+    public void clickonsearch() throws Exception{
+        testalibaba.setSearch("smart phone");
+        driver.navigate().to(url);
+    }
+    @Test
+    public void clickapparel(){
+        testalibaba.setApparel();
+    }
+    /*@Test
     public void clickonsignIn(){
         testalibaba.setSingIn();
     }
@@ -58,7 +103,7 @@ public class TestHomePage extends CommonAPI {
     @Test
     public void clickindusmechinery(){
         testalibaba.setIndustrialmachinery();
-    }
+    }*/
 
 
 }
