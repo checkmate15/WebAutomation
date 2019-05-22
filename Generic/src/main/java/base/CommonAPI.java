@@ -5,6 +5,7 @@ import com.relevantcodes.extentreports.LogStatus;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -63,11 +64,17 @@ public class CommonAPI {
 
     @Parameters({"platform", "url", "browser", "cloud", "browserVersion", "envName"})
     @BeforeClass
-    public static WebDriver setupDriver(String platform, String url, @Optional("chrome") String browser, @Optional("false") boolean cloud, String browserVersion, String envName) throws MalformedURLException {
-        if (cloud) {
+    public static WebDriver setupDriver(String platform, String url, @Optional("chrome-options") String browser, @Optional("false") boolean cloud, String browserVersion, String envName) throws MalformedURLException {
+        if (cloud==true) {
             driver = getCloudDriver(browser, browserVersion, platform, envName);
-        } else {
-            driver = getLocalDriver(browser, platform);
+        } else if (cloud==false){
+
+            if (browser.equalsIgnoreCase("chrome")){
+                driver = getLocalDriver(browser, platform);
+
+            }else if (browser.equalsIgnoreCase("chrome-options")){
+                getChrpmeOptions();
+            }
         }
         driver.get(url);
         return driver;
@@ -112,6 +119,17 @@ public class CommonAPI {
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         return driver;
+    }
+
+
+    public static void getChrpmeOptions(){
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-notifications");
+        System.setProperty("webdriver.chrome.driver", "../Generic/src/main/resources/drivers/chromedriver.exe");
+        driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
     }
 
     /**
@@ -526,7 +544,7 @@ public class CommonAPI {
             System.out.println("ID locator didn't work");
         }
         try {
-             driver.findElement(By.name(locator)).sendKeys(value, Keys.ENTER);
+            driver.findElement(By.name(locator)).sendKeys(value, Keys.ENTER);
         } catch (Exception ex2) {
             System.out.println("Name locator didn't work");
         }

@@ -22,6 +22,9 @@ public class TestHomePage extends CommonAPI {
     @AfterClass
     public void init(){
         driver.get(url);
+
+
+
     }
 
     @Test
@@ -159,15 +162,33 @@ public class TestHomePage extends CommonAPI {
     @Test
     public void checkUSA(){
         testalibaba.setUSA();
+        driver.navigate().to(url);
 
     }
     @Test
     public void checkaboutalibaba() {
         testalibaba.setAboutalibaba();
+        driver.navigate().to(url);
     }
     @Test
     public void cleckturkry(){
         testalibaba.setTurkey();
+        driver.navigate().to(url);
+    }
+    @Test
+    public void checkthailand(){
+        testalibaba.setThailand();
+        driver.navigate().to(url);
+    }
+    @Test
+    public void checkmalaysia(){
+        testalibaba.setMalaysia();
+        driver.navigate().to(url);
+    }
+    @Test
+    public void checksouthkorea(){
+        testalibaba.setSouthkorea();
+        driver.navigate().to(url);
     }
 
 

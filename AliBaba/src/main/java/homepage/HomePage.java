@@ -7,6 +7,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import java.security.Key;
 
@@ -75,12 +76,49 @@ public class HomePage extends CommonAPI {
     WebElement aboutalibaba;
     @FindBy(xpath = "//*[@id=\"home2017_services\"]/div[1]/div[2]/ul[1]/li[3]/a[1]")
     WebElement turkey;
+    @FindBy(xpath = "//*[@id=\"home2017_services\"]/div[1]/div[2]/ul[1]/li[4]/a[1]")
+    WebElement thailand;
+    @FindBy(xpath = "//*[@id=\"home2017_services\"]/div[1]/div[2]/ul[1]/li[5]/a[1]")
+    WebElement malaysia;
+    @FindBy(xpath = "//*[@id=\"home2017_services\"]/div[1]/div[2]/ul[1]/li[7]/a[1]")
+    WebElement southkorea;
+
+    public void setSouthkorea(){
+        if(southkorea.isDisplayed()){
+            System.out.println("passed");
+        }else
+            System.out.println("failed");
+        southkorea.click();
+    }
+
+
+
+
+
+    public void setMalaysia(){
+        if(malaysia.isDisplayed()){
+            System.out.println("passed");
+        }else
+            System.out.println("failed");
+        malaysia.click();
+    }
+
+
+
+    public void setThailand(){
+        if(thailand.isDisplayed()){
+            System.out.println("passed");
+        }else
+            System.out.println("failed");
+        thailand.click();
+    }
 
     public void setTurkey(){
         if(turkey.isDisplayed()){
             System.out.println(("passed"));
         }else
             System.out.println("failed");
+        turkey.click();
 
     }
 
@@ -89,19 +127,25 @@ public class HomePage extends CommonAPI {
             System.out.println("Passed");
         }else
             System.out.println("Failed");
+
     }
 
 
     public void setUSA(){
-        if(USA.isDisplayed())
-            Assert.assertTrue(true );
+        if(USA.isDisplayed()) {
+            System.out.println("passed");
+        }else System.out.println("Failed");
+        USA.click();
 
 
     }
 
     public void setVietnum(){
-        if(vietnum.isDisplayed())
-            Assert.assertTrue(true);
+        if(vietnum.isDisplayed()){
+            System.out.println("passed");
+        }else
+            System.out.println("Failed");
+
         vietnum.click();
 
     }
@@ -153,7 +197,7 @@ public class HomePage extends CommonAPI {
 
 
     public void setHomekicthen(){
-        if(homekicthen.isEnabled())
+        if(homekicthen.isDisplayed())
             homekicthen.click();
         String url =driver.getCurrentUrl();
         System.out.println(url);
@@ -180,7 +224,7 @@ public class HomePage extends CommonAPI {
     }
 
     public void setHelpcommuinity(){
-        if(helpcommuinity.isEnabled())
+        if(helpcommuinity.isDisplayed())
             helpcommuinity.click();
     }
 
@@ -213,7 +257,7 @@ public class HomePage extends CommonAPI {
 
 
     public void setCategoris(){
-    if(categoris.isEnabled())
+    if(categoris.isDisplayed())
         categoris.click();
 
 
@@ -232,7 +276,7 @@ public class HomePage extends CommonAPI {
         consumer.click();
     }
     public void setAndroidphone() {
-        if (androidphone.isEnabled())
+        if (androidphone.isDisplayed())
             androidphone.click();
     }
     public void setBlackview(){
