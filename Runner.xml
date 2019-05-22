@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="" parallel="false">
+<suite name="amazon" parallel="false">
 
     <parameter name="useCloudEnv" value="true"/>
     <parameter name="cloudEnvName" value="browserstack"/>
@@ -13,8 +13,6 @@
 
     <test name="eBay Home">
         <classes>
-            <class name=""/>
-            <class name=""/>
 
         </classes>
     </test>
