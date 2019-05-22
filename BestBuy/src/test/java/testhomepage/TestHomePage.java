@@ -51,6 +51,12 @@ public class TestHomePage extends CommonAPI {
     }
 
     @Test
+    public void pagesource(){
+        String source = driver.getPageSource();
+        System.out.println(source);
+    }
+
+    @Test
     public void clickOnproduct() {
         testHome.setProduct();
     }
@@ -101,11 +107,46 @@ public class TestHomePage extends CommonAPI {
     @Test
     public void clickonDeals() {
         testHome.setDeals();
+
+    }
+
+    @Test
+    public void validateDeals() {
+        testHome.setDeals();
+        if (driver.findElement(By.xpath("//*[@id='group2']/div[1]/div[1]/ul[1]/li[1]/a[1]/img[1]")).isDisplayed()){
+            System.out.println("image displayed");
+
+        }else{
+            System.out.println("failed");
+        }
+        driver.navigate().to(url);
+
+    }
+
+    @Test
+    public void checkingDeals() {
+        testHome.setDeals();
+        driver.findElement(By.xpath("//*[@id='group2']/div[1]/div[1]/ul[1]/li[1]/a[1]")).click();
+        driver.findElement(By.xpath("//*[@id='d2356979-d87d-4c30-96f6-19df27858dfd']/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/h3[1]/a[1]")).click();
+        String dealurl = driver.getCurrentUrl();
+        System.out.println(dealurl);
+        driver.navigate().to(url);
+
     }
 
     @Test
     public void clickonServices() {
         testHome.setServices();
+        driver.navigate().to(url);
+    }
+
+    @Test
+    public void checkingServices() {
+        testHome.setServices();
+        driver.findElement(By.xpath("//*[@id='group3']/div[1]/div[1]/div[1]/ul[1]/li[5]/a[1]")).click();
+
+        String serviceurl = driver.getCurrentUrl();
+        System.out.println(serviceurl);
         driver.navigate().to(url);
     }
 
@@ -135,6 +176,32 @@ public class TestHomePage extends CommonAPI {
         testHome.setGiftCard();
         navigateBack();
     }
+
+    @Test
+    public void moreGiftCard() {
+        testHome.setGiftCard();
+
+        String textm = driver.findElement(By.xpath("//*[@id='site-control-content']/div[3]/h1[1]")).getText();
+
+        System.out.println(textm);
+
+
+        driver.navigate().to(url);
+    }
+
+    @Test
+    public void imageVerifyGiftCard() {
+        testHome.setGiftCard();
+
+        if (driver.findElement(By.xpath("//*[@id='widget-b07d77fa-0eb9-4f71-9fb5-18477bccf17a']/div[1]/div[1]/a[1]/img[1]")).isDisplayed()){
+            System.out.println("validate pass");
+        }
+
+
+
+        driver.navigate().to(url);
+    }
+
 
 
     @Test

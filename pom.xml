@@ -11,6 +11,11 @@
     <modules>
         <module>Generic</module>
         <module>BestBuy</module>
+        <module>AliBaba</module>
+        <module>Cnn</module>
+        <module>Ebay</module>
+        <module>Amazon</module>
+
     </modules>
 
     <dependencyManagement>
