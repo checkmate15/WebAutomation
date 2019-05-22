@@ -15,6 +15,9 @@
     <test name="BestBuy Web test">
         <classes>
             <class name="testhomepage.TestHomePage"/>
+            <class name="testproduct.TestProduct"/>
+            <class name="testbrands.TestBrands"/>
+            <class name="testaccount.TestAccount"/>
         </classes>
     </test>
 </suite>

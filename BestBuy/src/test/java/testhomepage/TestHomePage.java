@@ -35,7 +35,7 @@ public class TestHomePage extends CommonAPI {
         System.out.println(MainUrl);
     }
 
-    @Test
+    @Test(priority = 48)
     public void alert(){
         driver.findElement(By.xpath("//*[@class='close']")).click();
 
@@ -69,15 +69,6 @@ public class TestHomePage extends CommonAPI {
     }
 
     @Test (priority = 5)
-    public void inproduct() {
-        testHome.setProduct();
-        driver.findElement(By.xpath("//*[@id='level2Menu0']/a[1]")).click();
-        driver.findElement(By.xpath("//*[@id='level2Group0']/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]")).click();
-
-
-    }
-
-    @Test (priority = 6)
     public void checkproduct() {
         testHome.setProduct();
         String checktext = driver.findElement(By.xpath("//*[@id='group0']/div[4]/div[1]/ul[1]/li[1]/a[1]/span[2]")).getText();
@@ -85,15 +76,12 @@ public class TestHomePage extends CommonAPI {
     }
 
 
-
-
-
-    @Test (priority = 7)
+    @Test (priority = 6)
     public void clickonBrands() {
         testHome.setBrands();
     }
 
-    @Test (priority = 8)
+    @Test (priority = 7)
     public void checkBrands() {
         testHome.setBrands();
         driver.findElement(By.xpath("//*[@id='group1']/div[1]/ul[1]/li[1]/a[1]")).click();
@@ -108,13 +96,13 @@ public class TestHomePage extends CommonAPI {
 
     }
 
-    @Test (priority = 9)
+    @Test (priority = 8)
     public void clickonDeals() {
         testHome.setDeals();
 
     }
 
-    @Test (priority = 10)
+    @Test (priority = 9)
     public void validateDeals() {
         testHome.setDeals();
         if (driver.findElement(By.xpath("//*[@id='group2']/div[1]/div[1]/ul[1]/li[1]/a[1]/img[1]")).isDisplayed()){
@@ -126,22 +114,21 @@ public class TestHomePage extends CommonAPI {
 
     }
 
-    @Test (priority = 11)
+    @Test (priority = 10)
     public void checkingDeals() {
         testHome.setDeals();
         driver.findElement(By.xpath("//*[@id='group2']/div[1]/div[1]/ul[1]/li[1]/a[1]")).click();
-        driver.findElement(By.xpath("//*[@id='d2356979-d87d-4c30-96f6-19df27858dfd']/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/h3[1]/a[1]")).click();
         String dealurl = driver.getCurrentUrl();
         System.out.println(dealurl);
 
     }
 
-    @Test (priority = 12)
+    @Test (priority = 11)
     public void clickonServices() {
         testHome.setServices();
     }
 
-    @Test (priority = 13)
+    @Test (priority = 12)
     public void checkingServices() {
         testHome.setServices();
         driver.findElement(By.xpath("//*[@id='group3']/div[1]/div[1]/div[1]/ul[1]/li[5]/a[1]")).click();
@@ -150,12 +137,12 @@ public class TestHomePage extends CommonAPI {
         System.out.println(serviceurl);
     }
 
-    @Test(priority = 14)
+    @Test(priority = 13)
     public void clickonAccount() {
         testHome.setAccount();
 
     }
-    @Test(priority = 15)
+    @Test(priority = 14)
     public void clickonButton() {
         testHome.setAccount();
         driver.findElement(By.xpath("//*[@id=\"account-menu-app\"]/div[1]/div[2]/div[1]/div[1]/a[1]/button[1]")).click();
@@ -168,12 +155,12 @@ public class TestHomePage extends CommonAPI {
 
     }
 
-    @Test(priority = 16)
+    @Test(priority = 15)
     public void clickonGiftCard() {
         testHome.setGiftCard();
     }
 
-    @Test (priority = 17)
+    @Test (priority = 16)
     public void moreGiftCard() {
         testHome.setGiftCard();
 
@@ -182,7 +169,7 @@ public class TestHomePage extends CommonAPI {
         System.out.println(textm);
     }
 
-    @Test (priority = 18)
+    @Test (priority = 17)
     public void imageVerifyGiftCard() {
         testHome.setGiftCard();
 
@@ -193,13 +180,13 @@ public class TestHomePage extends CommonAPI {
 
 
 
-    @Test (priority = 19)
+    @Test (priority = 18)
     public void CheckDownloadpage(){
         testHome.setBestbuyApp();
 
     }
 
-    @Test (priority = 20)
+    @Test (priority = 19)
     public void CheckDownloadpageIOS(){
         testHome.setBestbuyApp();
         driver.findElement(By.xpath("//*[@id='site-control-content']/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]/img[1]")).click();
@@ -213,10 +200,10 @@ public class TestHomePage extends CommonAPI {
         }
     }
 
-    @Test (priority = 21)
+    @Test (priority = 20)
     public void CheckDownloadpageandroid(){
         testHome.setBestbuyApp();
-        driver.findElement(By.xpath("//*[@id='site-control-content']/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[2]/img[1]")).click();
+        driver.findElement(By.xpath("//*[@id='//*[@id=\"site-control-content\"]/div[2]/div[2]/div/div/div/div/div[2]/div/div[1]/div/a[2]/img")).click();
         String androidurl = driver.getCurrentUrl();
         String expectedurl = "https://play.google.com/store/apps/details?id=com.bestbuy.android&hl=en";
 
@@ -228,13 +215,13 @@ public class TestHomePage extends CommonAPI {
 
     }
 
-    @Test (priority = 22)
+    @Test (priority = 21)
     public void clickonSavedIteams() {
         testHome.setSavedItem();
 
     }
 
-    @Test(priority = 23)
+    @Test(priority = 22)
     public void checkSavedIteams(){
         testHome.setSavedItem();
         String text = driver.findElement(By.xpath("//*[@id='shop-saved-items-211da1c8-de07-4018-afa6-c912886ebf9e']/div[1]/div[1]/div[4]/div[1]")).getText();
@@ -246,7 +233,7 @@ public class TestHomePage extends CommonAPI {
 
     }
 
-    @Test(priority = 24)
+    @Test(priority = 23)
     public void checkrecommend() {
         testHome.setSavedItem();
         if (driver.findElement(By.xpath("//*[@id='shop-saved-items-6cba1d9b-aa49-4630-97b1-4d4c30420250']/div[1]/div[1]/div[4]/div[2]/a[1]")).isEnabled()) {
@@ -257,12 +244,12 @@ public class TestHomePage extends CommonAPI {
 
     }
 
-    @Test(priority = 25)
+    @Test(priority = 24)
     public void clickonTodaysDeal() {
         testHome.setTodaysDeal();
     }
 
-    @Test(priority = 26)
+    @Test(priority = 25)
     public void validatetodaysdeal(){
         testHome.setTodaysDeal();
         if (driver.findElement(By.xpath("//*[@id='widget-481509de-239a-412e-9a73-0a552423cecb']/div[1]/div[1]/div[2]/div[1]/div[1]/h1[1]")).isDisplayed()){
@@ -276,35 +263,35 @@ public class TestHomePage extends CommonAPI {
     }
 
 
-    @Test(priority = 27)
+    @Test(priority = 26)
     public void clickonCareers() {
         testHome.setCareers();
 
     }
 
-    @Test(priority = 28)
+    @Test(priority = 27)
     public void Searchitems1()throws Exception{
         testHome.setSearch("Iphone");
     }
 
-    @Test(priority = 29)
+    @Test(priority = 28)
     public void clickonOrderStatus() {
         testHome.setOrderStatus();
     }
 
-    @Test(priority = 30)
+    @Test(priority = 29)
     public void clickonShoppingHistory() {
         testHome.setShoppingHistory();
 
 
     }
 
-    @Test(priority = 31)
+    @Test(priority = 30)
     public void clickonWeeklyad(){
         testHome.setWeeklyadd();
     }
 
-    @Test(priority = 32)
+    @Test(priority = 31)
     public void Searchitems2()throws Exception{
         testHome.setSearch("Laptop");
         String title = driver.getTitle();
@@ -312,7 +299,7 @@ public class TestHomePage extends CommonAPI {
 
     }
 
-    @Test(priority = 33)
+    @Test(priority = 32)
     public void Searchitems3()throws Exception{
         testHome.setSearch("Mobile phones");
         String currentUrl = driver.getCurrentUrl();
@@ -320,7 +307,7 @@ public class TestHomePage extends CommonAPI {
 
     }
 
-    @Test(priority = 34)
+    @Test(priority = 33)
     public void Searchitems4()throws Exception{
         testHome.setSearch("Ps4");
         driver.findElement(By.xpath("//*[@id='shop-sku-list-item-8653e092-ec40-40df-8a4a-56ef21da8277']/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/h4[1]/a[1]")).click();
