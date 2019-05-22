@@ -3,10 +3,7 @@ package testhomepage;
 import base.CommonAPI;
 import homepage.HomePage;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class TestHomePage extends CommonAPI {
 
@@ -19,9 +16,9 @@ public class TestHomePage extends CommonAPI {
         testalibaba = PageFactory.initElements(driver, HomePage.class);
         driver.get(url);
     }
-    @AfterClass
-    public void init(){
-        driver.get(url);
+    @AfterMethod
+    public void navigate(){
+        driver.navigate().to(url);
 
 
 
@@ -31,7 +28,7 @@ public class TestHomePage extends CommonAPI {
     public void clickcategoris(){
 
         testalibaba.setCategoris();
-        driver.navigate().to(url);
+        //driver.navigate().to(url);
 
     }
     @Test
@@ -68,7 +65,7 @@ public class TestHomePage extends CommonAPI {
     @Test
     public void clickonsearch() throws Exception{
         testalibaba.setSearch("smart phone");
-        driver.navigate().to(url);
+       // driver.navigate().to(url);
     }
     @Test
     public void clickapparel(){
@@ -95,32 +92,32 @@ public class TestHomePage extends CommonAPI {
     @Test
     public void clickhuwaweimobile(){
         testalibaba.setHuwaeimobile();
-        driver.navigate().to(url);
+        //driver.navigate().to(url);
     }
     @Test
     public void checkSphone(){
         testalibaba.setSphone();
-        driver.navigate().to(url);
+        //driver.navigate().to(url);
     }
     @Test
     public void clickiphone(){
         testalibaba.setIphonexr();
-        driver.navigate().to(url);
+        //driver.navigate().to(url);
     }
     @Test
     public void searchfor(){
         testalibaba.setSearchh("ball");
-        driver.navigate().to(url);
+       // driver.navigate().to(url);
     }
     @Test
     public void clickindea(){
         testalibaba.setIndea();
-        driver.navigate().to(url);
+        //driver.navigate().to(url);
     }
     @Test
     public void clickvietnum(){
         testalibaba.setVietnum();
-        driver.navigate().to(url);
+        //driver.navigate().to(url);
     }
     @Test
     public void clickonsignIn(){
@@ -142,54 +139,101 @@ public class TestHomePage extends CommonAPI {
     @Test
     public void clickandroid() {
         testalibaba.setAndroidphone();
-        driver.navigate().to(url);
+        //driver.navigate().to(url);
     }
     @Test
     public void clickblackview() {
         testalibaba.setBlackview();
-        driver.navigate().to(url);
+        //driver.navigate().to(url);
     }
     @Test
     public void clickfoldedphone(){
         testalibaba.setfoldphone();
-        driver.navigate().to(url);
+        //driver.navigate().to(url);
     }
     @Test
     public void clickoukitel() {
         testalibaba.setoukitel();
-        driver.navigate().to(url);
+        //driver.navigate().to(url);
     }
     @Test
     public void checkUSA(){
         testalibaba.setUSA();
-        driver.navigate().to(url);
+        //driver.navigate().to(url);
 
     }
     @Test
     public void checkaboutalibaba() {
         testalibaba.setAboutalibaba();
-        driver.navigate().to(url);
+        //driver.navigate().to(url);
     }
     @Test
     public void cleckturkry(){
         testalibaba.setTurkey();
-        driver.navigate().to(url);
+        //driver.navigate().to(url);
     }
     @Test
     public void checkthailand(){
         testalibaba.setThailand();
-        driver.navigate().to(url);
+        //driver.navigate().to(url);
     }
     @Test
     public void checkmalaysia(){
         testalibaba.setMalaysia();
-        driver.navigate().to(url);
+        //driver.navigate().to(url);
     }
     @Test
     public void checksouthkorea(){
         testalibaba.setSouthkorea();
-        driver.navigate().to(url);
+        //driver.navigate().to(url);
     }
+    @Test
+    public void clickrandomtab(){
+        testalibaba.setRandomtab();
+    }
+    @Test
+    public void clickrandom2(){
+        testalibaba.setRandomtab2();
+    }
+    @Test
+    public void clickhelpcenter(){testalibaba.setHelpcenter();
+    }
+    @Test
+    public void clickallcategoris(){
+        testalibaba.setAllcategori();
+
+    }
+    @Test
+    public void clickpolicy(){
+        testalibaba.setPolicy();
+    }
+    @Test
+    public void clicklearning(){
+        testalibaba.setLearningcenter();
+    }
+    @Test
+    public void clickreport(){
+        testalibaba.setReport();
+    }
+    @Test
+    public void clicksitemap(){
+        testalibaba.setSitemap();
+    }
+    @Test
+    public void clickbuisness(){
+        testalibaba.setBuissnesidentity();
+    }
+    @Test
+    public void clickreadytoship(){
+       testalibaba.setReadytoship();
+    }
+    @Test
+    public void clickbed(){
+        testalibaba.setBed();
+    }
+
+
+
 
 
     }
