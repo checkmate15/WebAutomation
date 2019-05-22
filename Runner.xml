@@ -13,8 +13,6 @@
 
     <test name="eBay Home">
         <classes>
-            <class name=""/>
-            <class name=""/>
 
         </classes>
     </test>
