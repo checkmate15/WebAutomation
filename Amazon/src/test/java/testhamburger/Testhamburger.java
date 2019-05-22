@@ -51,8 +51,24 @@ public class Testhamburger extends CommonAPI {
         testamazon1.setBlumega();
     }
     @Test(priority = 20)
-    public void clickondisplay1(){
-        testamazon1.setDisplay1();
+    public void clickonaddtocart(){
+        testamazon1.setAddtocart();
+    }
+    @Test(priority = 21)
+    public void clickonnothanks(){
+        testamazon1.setNothanks();
+    }
+   // @Test(priority = 22)
+    //public void clickoncart(){
+      //  testamazon1.setCart();
+    //}
+    @Test(priority = 22)
+    public void clickonproceed(){
+        testamazon1.setProceed();
+    }
+    @Test(priority = 23)
+    public void clickonemail(){
+        testamazon1.setEmail();
     }
 
 
