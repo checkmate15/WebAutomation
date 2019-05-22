@@ -19,30 +19,10 @@ public class TestEbayDeals extends CommonAPI {
     }
 
     @Test
-    public void getTitleAndUrl() {
-        driver.navigate().to(url);
-        String MainTitle = driver.getTitle();
-        System.out.println(MainTitle);
-
-        String MainUrl = driver.getCurrentUrl();
-        System.out.println(MainUrl);
-
-    }
-    @Test
     public void clickOnsDeals() {
         testEbayDeals.setDeals();
         navigateBack();
 
     }
-    @Test
-    public void clickGiftCard(){
-        testEbayDeals.setGiftCard();
-        navigateBack();
-    }
-    @Test
-    public void ClickOnHelpAndContact(){
-       testEbayDeals.setHelpAndContact();
-       navigateBack();
 
-    }
 }

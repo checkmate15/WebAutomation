@@ -109,12 +109,14 @@ public class TestEbaySearch extends CommonAPI {
     @Test(priority = 16)
     public void clickOnMotors() {
         testEbay.setMotors();
+        driver.navigate().to(url);
 
     }
 
     @Test(priority = 17)
     public void clickOnFashion() {
         testEbay.setFashion();
+        driver.navigate().to(url);
 
 
     }
@@ -122,6 +124,7 @@ public class TestEbaySearch extends CommonAPI {
     @Test(priority = 18)
     public void clickElectronicsOn(){
         testEbay.setElectronics();
+        driver.navigate().to(url);
 
     }
 
@@ -133,29 +136,34 @@ public class TestEbaySearch extends CommonAPI {
     }
 
     @Test(priority = 20)
-    public void clickOnHomeAndGarden()throws Exception {
+    public void clickOnHomeAndGarden() {
         testEbay.setHomeAndGarden();
+        driver.navigate().to(url);
 
     }
     @Test(priority = 21)
-    public void clickOnSportingGoods()throws Exception {
+    public void clickOnSportingGoods() {
         testEbay.setSportingGoods();
+        driver.navigate().to(url);
 
 
     }
     @Test(priority = 22)
-        public void clickOnToysAndHobbies()throws Exception{
+        public void clickOnToysAndHobbies(){
             testEbay.setToysAndHobbies();
+        driver.navigate().to(url);
 
     }
     @Test(priority = 23)
-    public void clickOnBusinessAndIndustrial()throws Exception {
+    public void clickOnBusinessAndIndustrial() {
         testEbay.setBusinessAndIndustrial();
+        driver.navigate().to(url);
 
     }
     @Test(priority = 24)
     public void clickOnMusic() {
         testEbay.setMusic();
+
 
     }
 

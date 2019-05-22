@@ -47,31 +47,31 @@ public class EbaySearch extends CommonAPI {
     @FindBy(xpath = "//*[@id=\"gh-cat\"]")
     WebElement AllCategories;
 
-    @FindBy(xpath = "//*[@id=\"nav-1\"]/div[1]/a/h2")
+    @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[3]/a")
     WebElement Motors;
 
-    @FindBy(xpath = "//*[@id=\"nav-2\"]/div[1]/a/h2")
+    @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[4]/a")
     WebElement Fashion;
 
-    @FindBy(xpath = "//*[@id=\"nav-3\"]/div[1]/a/h2")
+    @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[5]/a")
     WebElement Electronics;
 
-    @FindBy(xpath = "//*[@id=\"nav-4\"]/div[1]/a/h2")
+    @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[6]/a")
     WebElement CollectiblesAndArt;
 
-    @FindBy(xpath = "//*[@id=\"nav-5\"]/div[1]/a/h2")
+    @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[7]/a")
     WebElement HomeAndGarden;
 
-    @FindBy(xpath = "//*[@id=\"nav-6\"]/div[1]/a/h2")
+    @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[8]/a")
     WebElement SportingGoods;
 
-    @FindBy(xpath = "//*[@id=\"nav-7\"]/div[1]/a/h2")
+    @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[9]")
     WebElement ToysAndHobbies;
 
-    @FindBy(xpath = "//*[@id=\"nav-8\"]/div[1]/a/h2")
+    @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[10]")
     WebElement BusinessAndIndustrial;
 
-    @FindBy(xpath = "//*[@id=\"nav-9\"]/div[1]/a/h2")
+    @FindBy(xpath = "//*[@id=\"mainContent\"]/div[1]/ul/li[11]")
     WebElement Music;
 
     public void setShopByCategory() {
@@ -80,34 +80,43 @@ public class EbaySearch extends CommonAPI {
     }
     public void setSignIn() {
         SignIn.click();
+
     }
 
     public void setSignInButton() {
         SignInButton.click();
+
     }
 
     public void setUserName() {
         UserName.click();
+
     }
 
     public void setPassWord() {
+
         PassWord.click();
+
     }
 
     public void setcreateAnAccount() {
         createAnAccount.click();
+
     }
 
     public void setFirstName() {
         FirstName.click();
+
     }
 
     public void setLastName() {
         LastName.click();
+
     }
 
     public void setEmail() {
         Email.click();
+
     }
 
     public void setPassword() {
@@ -116,7 +125,9 @@ public class EbaySearch extends CommonAPI {
 
     }
     public void setSearchButton(String name) {
+
         SearchButton.sendKeys(name,Keys.ENTER);
+
     }
 
     public void setSearchItem(String text) throws Exception {
@@ -134,26 +145,32 @@ public class EbaySearch extends CommonAPI {
 
     public void setMotors() {
             Motors.click();
+
     }
 
     public void setFashion() {
             Fashion.click();
+
     }
 
     public void setElectronics() {
             Electronics.click();
+
     }
 
     public void setCollectiblesAndArt() {
             CollectiblesAndArt.click();
+
     }
 
     public void setHomeAndGarden() {
             HomeAndGarden.click();
+
     }
 
     public void setSportingGoods() {
             SportingGoods.click();
+
     }
 
     public void setToysAndHobbies() {
@@ -163,6 +180,7 @@ public class EbaySearch extends CommonAPI {
 
     public void setBusinessAndIndustrial() {
         BusinessAndIndustrial.click();
+
     }
 
     public void setMusic() {

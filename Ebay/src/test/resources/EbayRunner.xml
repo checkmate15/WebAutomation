@@ -16,13 +16,9 @@
         <classes>
 
             <!--<class name="regerssionTest.TestHomePage"/>-->
-            <!--/class name="regerssionTest.TestEbayClass1"/-->
-            <!--/class name="regerssionTest.TestEbayClass2"/-->
-            <!--class name="regerssionTest.TestEbayDeals"/-->
-            <class name="regerssionTest.TestEbaySearch"/>
-
-
-
+            <class name="regerssionTest.TestEbayClass2"/>
+            <!--<class name="regerssionTest.TestEbayDeals"/>-->
+            <!--<class name="regerssionTest.TestEbaySearch"/>-->
 
 
         </classes>

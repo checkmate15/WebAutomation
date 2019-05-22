@@ -1,10 +1,10 @@
 package base;
-
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -61,32 +61,38 @@ public class CommonAPI {
 
     }
 
-    @Parameters({"platform", "url", "browserName", "cloudEnvName", "browserVersion", "cloudEnvName"})
+    @Parameters({"platform", "url", "browser", "cloud", "browserVersion", "envName"})
     @BeforeClass
-    public static WebDriver setupDriver(String platform, String url, @Optional("chrome") String browserName, @Optional("false") boolean cloudEnvName, String browserVersion, String envName) throws MalformedURLException {
-        if (cloudEnvName) {
-            driver = getCloudDriver(browserName, browserVersion, platform, envName);
-        } else {
-            driver = getLocalDriver(browserName, platform);
+    public static WebDriver setupDriver(String platform, String url, @Optional("chrome-options") String browser, @Optional("false") boolean cloud, String browserVersion, String envName) throws MalformedURLException {
+        if (cloud==true) {
+            driver = getCloudDriver(browser, browserVersion, platform, envName);
+        } else if (cloud==false){
+
+            if (browser.equalsIgnoreCase("chrome")){
+                driver = getLocalDriver(browser, platform);
+
+            }else if (browser.equalsIgnoreCase("chrome-options")){
+                getChrpmeOptions();
+            }
         }
         driver.get(url);
         return driver;
     }
 
-    public static WebDriver getCloudDriver(String browserName, String browserVersion, String platform, String cloudEnvName) throws MalformedURLException {
+    public static WebDriver getCloudDriver(String browser, String browserVersion, String platform, String envName) throws MalformedURLException {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("name", "Cloud Execution");
-        capabilities.setCapability("browser", browserName);
+        capabilities.setCapability("browser", browser);
 
         capabilities.setCapability("browser_version", browserVersion);
         capabilities.setCapability("os", platform);
         capabilities.setCapability("os_version", "Mojave");
 
-        if (cloudEnvName.equalsIgnoreCase("Saucelabs")) {
+        if (envName.equalsIgnoreCase("Saucelabs")) {
             //resolution for Saucelabs
             driver = new RemoteWebDriver(new URL(SAUCE_URL), capabilities);
-        } else if (cloudEnvName.equalsIgnoreCase("Browserstack")) {
+        } else if (envName.equalsIgnoreCase("Browserstack")) {
             capabilities.setCapability("resolution", "1024x768");
             driver = new RemoteWebDriver(new URL(BROWSERSTACK_URL), capabilities);
         }
@@ -96,16 +102,15 @@ public class CommonAPI {
     /**
      * This method create driver instance for the local execution
      *
-     * @param browserName  name of the browser
+     * @param browser  name of the browser
      * @param platform platform name
      * @return WebDriver webdriver instance for the driver
      * @Author - peoplenTech
      */
-
-    public static WebDriver getLocalDriver(String browserName, String platform) {
-        if (platform.equalsIgnoreCase("mac") && browserName.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "../Generic/src/main/resources/drivers/chromedriver 2");
-        } else if (platform.equalsIgnoreCase("windows") && browserName.equalsIgnoreCase("chrome")) {
+    public static WebDriver getLocalDriver(String browser, String platform) {
+        if (platform.equalsIgnoreCase("mac") && browser.equalsIgnoreCase("chrome")) {
+            System.setProperty("webdriver.chrome.driver", "../Generic/src/main/resources/drivers/chromedriver");
+        } else if (platform.equalsIgnoreCase("windows") && browser.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver", "../Generic/src/main/resources/drivers/chromedriver.exe");
         }
         driver = new ChromeDriver();
@@ -113,6 +118,17 @@ public class CommonAPI {
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         return driver;
+    }
+
+
+    public static void getChrpmeOptions(){
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-notifications");
+        System.setProperty("webdriver.chrome.driver", "../Generic/src/main/resources/drivers/chromedriver.exe");
+        driver = new ChromeDriver(options);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
     }
 
     /**
@@ -273,7 +289,7 @@ public class CommonAPI {
 
     @AfterClass
     public void quitDriver() {
-//        driver.close();
+        driver.close();
         driver.quit();
     }
 
@@ -486,7 +502,6 @@ public class CommonAPI {
 
     //type
     public void typeOnCss(String locator, String value) {
-
         driver.findElement(By.cssSelector(locator)).sendKeys(value);
     }
 
@@ -538,4 +553,5 @@ public class CommonAPI {
             System.out.println("CSS locator didn't work");
         }
     }
+
 }
