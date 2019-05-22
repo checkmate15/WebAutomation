@@ -20,8 +20,8 @@
 
 
             <!--<class name="regerssionTest.TestEbayProduct"/>-->
-            <!--<class name="regerssionTest.TestEbayDeals"/>-->
-            <class name="regerssionTest.TestEbaySearch"/>
+            <class name="regerssionTest.TestEbayDeals"/>
+            <!--<class name="regerssionTest.TestEbaySearch"/>-->
 
 
         </classes>
