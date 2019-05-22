@@ -63,7 +63,7 @@ public class CommonAPI {
 
     @Parameters({"platform", "url", "browser", "cloud", "browserVersion", "envName"})
     @BeforeClass
-    public static WebDriver setupDriver(@Optional String platform, String url, @Optional("chrome-options") String browser, @Optional("false") boolean cloud, String browserVersion, String envName) throws MalformedURLException {
+    public static WebDriver setupDriver(String platform, String url, @Optional("chrome-options") String browser, @Optional("false") boolean cloud, String browserVersion, String envName) throws MalformedURLException {
         if (cloud==true) {
             driver = getCloudDriver(browser, browserVersion, platform, envName);
         } else if (cloud==false){
