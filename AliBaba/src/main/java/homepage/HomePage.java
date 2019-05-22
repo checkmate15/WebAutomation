@@ -1,6 +1,7 @@
 package homepage;
 
 import base.CommonAPI;
+import com.sun.org.apache.xpath.internal.XPath;
 import com.sun.org.apache.xpath.internal.operations.Div;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.TakesScreenshot;
@@ -82,6 +83,83 @@ public class HomePage extends CommonAPI {
     WebElement malaysia;
     @FindBy(xpath = "//*[@id=\"home2017_services\"]/div[1]/div[2]/ul[1]/li[7]/a[1]")
     WebElement southkorea;
+    @FindBy(xpath = "//*[@id=\"home2017_countries\"]/div/div[2]/ul/div[1]/a/div[3]/div[2]/h3")
+    WebElement randomtab;
+    @FindBy(xpath = "//*[@id=\"home2017_countries\"]/div/div[2]/ul/div[2]/a/div[3]/div[2]/p")
+    WebElement randomtab2;
+    @FindBy(xpath = "//*[@id=\"ui-footer\"]/div[1]/div[1]/dl/dd[1]/a")
+    WebElement helpcenter;
+    @FindBy(xpath = "//*[@id=\"ui-footer\"]/div[1]/div[3]/dl/dd[1]/a")
+    WebElement allcategori;
+    @FindBy(xpath = "//*[@id=\"ui-footer\"]/div[1]/div[1]/dl/dd[5]/a")
+    WebElement policy;
+    @FindBy(xpath = "//*[@id=\"ui-footer\"]/div[1]/div[4]/dl/dd[2]/a")
+    WebElement learningcenter;
+    @FindBy(xpath = "//*[@id=\"ui-footer\"]/div[1]/div[1]/dl/dd[3]/a")
+    WebElement report;
+    @FindBy(xpath = "//*[@id=\"ui-footer\"]/div[1]/div[2]/dl/dd[3]/a")
+    WebElement sitemap;
+    @FindBy(xpath = "//*[@id=\"ui-footer\"]/div[1]/div[5]/dl/dd[2]/a")
+    WebElement buissnesidentity;
+    @FindBy(xpath = "//*[@id=\"ui-footer\"]/div[1]/div[3]/dl/dd[3]/a")
+    WebElement readytoship;
+    @FindBy(xpath = "//*[@id=\"recommendation-for-you\"]/div[2]/div/div/div[8]/div/div/div[2]/h2/a")
+    WebElement bed;
+
+    public void setBed(){
+        bed.click();
+    }
+
+    public void setReadytoship(){
+        readytoship.click();
+    }
+
+    public void setBuissnesidentity(){buissnesidentity.click();}
+
+
+    public void setSitemap(){
+        if(sitemap.isDisplayed())
+            sitemap.click();
+        String title = driver.getTitle();
+        System.out.println(title);
+    }
+
+
+    public void setReport(){
+        report.click();
+    }
+
+    public void setLearningcenter(){
+        if(learningcenter.isDisplayed())
+            learningcenter.click();
+        String url = driver.getCurrentUrl();
+        System.out.println(url);
+
+
+    }
+
+
+    public void setPolicy(){
+        policy.click();
+    }
+
+    public void setAllcategori(){
+        allcategori.click();
+    }
+
+    public void setHelpcenter(){
+        if(helpcenter.isDisplayed())
+            helpcenter.click();
+
+    }
+
+    public void setRandomtab2(){randomtab2.click();}
+
+
+
+    public void setRandomtab(){
+        randomtab.click();
+    }
 
     public void setSouthkorea(){
         if(southkorea.isDisplayed()){

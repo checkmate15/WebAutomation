@@ -16,7 +16,7 @@
     <test name="AliBaba">
         <parameter name="url" value ="https://www.alibaba.com/"/>
         <classes>
-            <class name="testfurniturepage.TestFurniturePage"/>
+            <class name="testhomepage.TestHomePage"/>
         </classes>
     </test>
 </suite>
