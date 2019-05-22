@@ -39,8 +39,8 @@ public class ExcelReader {
             HSSFRow rows = sheet.getRow(i);
             for (int j = 0; j < numberOfCol; j++) {
                 HSSFCell cell = rows.getCell(j);
-                String cellData = getCellValue(cell);
-                data[i] = cellData;
+//                String cellData = getCellValue(cell);
+//                data[i] = cellData;
             }
         }
         return data;
@@ -56,26 +56,26 @@ public class ExcelReader {
         numberOfCol = sheet.getRow(0).getLastCellNum();
         HSSFRow rows = sheet.getRow(Row);
         HSSFCell cell = rows.getCell(Cell);
-        String cellData = getCellValue(cell);
-        data = cellData;
+     //   String cellData = getCellValue(cell);
+      //  data = cellData;
 
         return data;
     }
 
-    public String getCellValue(HSSFCell cell) {
-        Object value = null;
-        int dataType = cell.getCellType();
-        switch (dataType) {
-            case HSSFCell.CELL_TYPE_NUMERIC:
-                value = cell.getNumericCellValue();
-                break;
-            case HSSFCell.CELL_TYPE_STRING:
-                value = cell.getStringCellValue();
-                break;
-            case HSSFCell.CELL_TYPE_BOOLEAN:
-                value = cell.getBooleanCellValue();
-                break;
-        }
-        return value.toString();
-    }
+//    public String getCellValue(HSSFCell cell) {
+//        Object value = null;
+//        int dataType = cell.getCellType();
+//        switch (dataType) {
+//            case HSSFCell.CELL_TYPE_NUMERIC:
+//                value = cell.getNumericCellValue();
+//                break;
+//            case HSSFCell.CELL_TYPE_STRING:
+//                value = cell.getStringCellValue();
+//                break;
+//            case HSSFCell.CELL_TYPE_BOOLEAN:
+//                value = cell.getBooleanCellValue();
+//                break;
+//        }
+//        return value.toString();
+//    }
 }

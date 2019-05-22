@@ -10,11 +10,9 @@
     <modules>
 
         <module>Generic</module>
-        <module>BestBuy</module>
-        <module>AliBaba</module>
-        <module>Cnn</module>
+
         <module>Ebay</module>
-        <module>Amazon</module>
+
 
     </modules>
 
@@ -55,7 +53,7 @@
                 <groupId>com.aventstack</groupId>
                 <artifactId>extentreports</artifactId>
                 <version>3.1.5</version>
-            </dependency>         <!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
+            </dependency>
             <dependency>
                 <groupId>com.relevantcodes</groupId>
                 <artifactId>extentreports</artifactId>
