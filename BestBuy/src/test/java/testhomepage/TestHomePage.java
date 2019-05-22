@@ -6,10 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class TestHomePage extends CommonAPI {
     HomePage testHome;
@@ -22,9 +19,13 @@ public class TestHomePage extends CommonAPI {
         Thread.sleep(5000);
 
     }
+    @AfterMethod
+    public void initialize(){
+        driver.get(url);
+    }
 
 
-    @Test
+    @Test (priority = 1)
     public void gettitleandurl(){
         driver.navigate().to(url);
         String MainTitle = driver.getTitle();
@@ -35,6 +36,12 @@ public class TestHomePage extends CommonAPI {
     }
 
     @Test
+    public void alert(){
+        driver.findElement(By.xpath("//*[@class='close']")).click();
+
+    }
+
+    @Test (priority = 2)
     public void validatetitleandurl(){
         driver.navigate().to(url);
         String MainTitle = driver.getTitle();
@@ -50,44 +57,43 @@ public class TestHomePage extends CommonAPI {
         }
     }
 
-    @Test
+    @Test (priority = 3)
     public void pagesource(){
         String source = driver.getPageSource();
         System.out.println(source);
     }
 
-    @Test
+    @Test (priority = 4)
     public void clickOnproduct() {
         testHome.setProduct();
     }
 
-    @Test
+    @Test (priority = 5)
     public void inproduct() {
         testHome.setProduct();
-        driver.findElement(By.xpath("//*[@id=\"level2Menu0\"]/a[1]")).click();
-        driver.findElement(By.xpath("//*[@id=\"level2Group0\"]/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]")).click();
+        driver.findElement(By.xpath("//*[@id='level2Menu0']/a[1]")).click();
+        driver.findElement(By.xpath("//*[@id='level2Group0']/div[1]/div[1]/div[1]/ul[1]/li[1]/a[1]")).click();
 
-        driver.navigate().to(url);
+
     }
 
-    @Test
+    @Test (priority = 6)
     public void checkproduct() {
         testHome.setProduct();
-        String checktext = driver.findElement(By.xpath("//*[@id=\"group0\"]/div[4]/div[1]/ul[1]/li[1]/a[1]/span[2]")).getText();
+        String checktext = driver.findElement(By.xpath("//*[@id='group0']/div[4]/div[1]/ul[1]/li[1]/a[1]/span[2]")).getText();
         System.out.println(checktext);
-        driver.navigate().to(url);
     }
 
 
 
 
 
-    @Test
+    @Test (priority = 7)
     public void clickonBrands() {
         testHome.setBrands();
     }
 
-    @Test
+    @Test (priority = 8)
     public void checkBrands() {
         testHome.setBrands();
         driver.findElement(By.xpath("//*[@id='group1']/div[1]/ul[1]/li[1]/a[1]")).click();
@@ -95,22 +101,20 @@ public class TestHomePage extends CommonAPI {
         driver.findElement(By.xpath("//*[@class='btn btn-primary btn-sm btn-block btn-leading-ficon add-to-cart-button']")).click();
         driver.findElement(By.xpath("//*[@id='header']/div[1]/div[2]/ul[1]/li[2]/a[1]")).click();
 
-        if (driver.findElement(By.xpath("//*[@id='cartApp']/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/a[1]")).isDisplayed()){
-            System.out.println("cart checking Passed");
-        }
+        if (driver.findElement(By.xpath("//*[@id='cartApp']/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/a[1]")).isDisplayed())
+        System.out.println("cart checking Passed");
 
-        driver.navigate().to(url);
 
 
     }
 
-    @Test
+    @Test (priority = 9)
     public void clickonDeals() {
         testHome.setDeals();
 
     }
 
-    @Test
+    @Test (priority = 10)
     public void validateDeals() {
         testHome.setDeals();
         if (driver.findElement(By.xpath("//*[@id='group2']/div[1]/div[1]/ul[1]/li[1]/a[1]/img[1]")).isDisplayed()){
@@ -119,164 +123,212 @@ public class TestHomePage extends CommonAPI {
         }else{
             System.out.println("failed");
         }
-        driver.navigate().to(url);
 
     }
 
-    @Test
+    @Test (priority = 11)
     public void checkingDeals() {
         testHome.setDeals();
         driver.findElement(By.xpath("//*[@id='group2']/div[1]/div[1]/ul[1]/li[1]/a[1]")).click();
         driver.findElement(By.xpath("//*[@id='d2356979-d87d-4c30-96f6-19df27858dfd']/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/h3[1]/a[1]")).click();
         String dealurl = driver.getCurrentUrl();
         System.out.println(dealurl);
-        driver.navigate().to(url);
 
     }
 
-    @Test
+    @Test (priority = 12)
     public void clickonServices() {
         testHome.setServices();
-        driver.navigate().to(url);
     }
 
-    @Test
+    @Test (priority = 13)
     public void checkingServices() {
         testHome.setServices();
         driver.findElement(By.xpath("//*[@id='group3']/div[1]/div[1]/div[1]/ul[1]/li[5]/a[1]")).click();
 
         String serviceurl = driver.getCurrentUrl();
         System.out.println(serviceurl);
-        driver.navigate().to(url);
     }
 
-    @Test
+    @Test(priority = 14)
     public void clickonAccount() {
         testHome.setAccount();
-        driver.navigate().to(url);
 
     }
-    @Test
+    @Test(priority = 15)
     public void clickonButton() {
         testHome.setAccount();
         driver.findElement(By.xpath("//*[@id=\"account-menu-app\"]/div[1]/div[2]/div[1]/div[1]/a[1]/button[1]")).click();
         String newurl = driver.getCurrentUrl();
         String expectedurl = "https://www.bestbuy.com/identity/signin?token=tid%3Afaa8cc3e-7ba4-11e9-baaf-005056ae5cbe";
 
-        if(newurl.equalsIgnoreCase(expectedurl)) {
+        if(newurl.equalsIgnoreCase(expectedurl))
             System.out.println("Sign in page Passed");
-        }
-        driver.navigate().to(url);
 
 
     }
 
-    @Test
+    @Test(priority = 16)
     public void clickonGiftCard() {
         testHome.setGiftCard();
-        navigateBack();
     }
 
-    @Test
+    @Test (priority = 17)
     public void moreGiftCard() {
         testHome.setGiftCard();
 
         String textm = driver.findElement(By.xpath("//*[@id='site-control-content']/div[3]/h1[1]")).getText();
 
         System.out.println(textm);
-
-
-        driver.navigate().to(url);
     }
 
-    @Test
+    @Test (priority = 18)
     public void imageVerifyGiftCard() {
         testHome.setGiftCard();
 
         if (driver.findElement(By.xpath("//*[@id='widget-b07d77fa-0eb9-4f71-9fb5-18477bccf17a']/div[1]/div[1]/a[1]/img[1]")).isDisplayed()){
             System.out.println("validate pass");
         }
-
-
-
-        driver.navigate().to(url);
     }
 
 
 
-    @Test
+    @Test (priority = 19)
     public void CheckDownloadpage(){
         testHome.setBestbuyApp();
-        navigateBack();
+
     }
 
-    @Test
+    @Test (priority = 20)
+    public void CheckDownloadpageIOS(){
+        testHome.setBestbuyApp();
+        driver.findElement(By.xpath("//*[@id='site-control-content']/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]/img[1]")).click();
+        String iosurl = driver.getCurrentUrl();
+        String expectedurl = "https://itunes.apple.com/us/app/best-buy/id314855255?mt=8";
+
+        if(iosurl.equalsIgnoreCase(expectedurl)){
+            System.out.println("Test passed");
+        }else{
+            System.out.println("Failed");
+        }
+    }
+
+    @Test (priority = 21)
+    public void CheckDownloadpageandroid(){
+        testHome.setBestbuyApp();
+        driver.findElement(By.xpath("//*[@id='site-control-content']/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/a[2]/img[1]")).click();
+        String androidurl = driver.getCurrentUrl();
+        String expectedurl = "https://play.google.com/store/apps/details?id=com.bestbuy.android&hl=en";
+
+        if(androidurl.equalsIgnoreCase(expectedurl)){
+            System.out.println("Test passed");
+        }else{
+            System.out.println("Failed");
+        }
+
+    }
+
+    @Test (priority = 22)
     public void clickonSavedIteams() {
         testHome.setSavedItem();
-        navigateBack();
 
     }
 
-    @Test
+    @Test(priority = 23)
+    public void checkSavedIteams(){
+        testHome.setSavedItem();
+        String text = driver.findElement(By.xpath("//*[@id='shop-saved-items-211da1c8-de07-4018-afa6-c912886ebf9e']/div[1]/div[1]/div[4]/div[1]")).getText();
+        if (driver.findElement(By.xpath("//*[@id='shop-saved-items-211da1c8-de07-4018-afa6-c912886ebf9e']/div[1]/div[1]/div[4]/div[1]")).isDisplayed()) {
+            System.out.println(text);
+        }else{
+            System.out.println("Failed");
+        }
+
+    }
+
+    @Test(priority = 24)
+    public void checkrecommend() {
+        testHome.setSavedItem();
+        if (driver.findElement(By.xpath("//*[@id='shop-saved-items-6cba1d9b-aa49-4630-97b1-4d4c30420250']/div[1]/div[1]/div[4]/div[2]/a[1]")).isEnabled()) {
+            driver.findElement(By.xpath("//*[@id='shop-saved-items-6cba1d9b-aa49-4630-97b1-4d4c30420250']/div[1]/div[1]/div[4]/div[2]/a[1]")).click();
+        }else {
+            System.out.println("Failed");
+        }
+
+    }
+
+    @Test(priority = 25)
     public void clickonTodaysDeal() {
         testHome.setTodaysDeal();
-        navigateBack();
+    }
+
+    @Test(priority = 26)
+    public void validatetodaysdeal(){
+        testHome.setTodaysDeal();
+        if (driver.findElement(By.xpath("//*[@id='widget-481509de-239a-412e-9a73-0a552423cecb']/div[1]/div[1]/div[2]/div[1]/div[1]/h1[1]")).isDisplayed()){
+            System.out.println("passed");
+        }else{
+            System.out.println("Failed");
+        }
+
+
+
     }
 
 
-    @Test
+    @Test(priority = 27)
     public void clickonCareers() {
         testHome.setCareers();
-        driver.navigate().to(url);
+
     }
 
-    @Test
+    @Test(priority = 28)
     public void Searchitems1()throws Exception{
         testHome.setSearch("Iphone");
-        navigateBack();
     }
 
-    @Test
+    @Test(priority = 29)
     public void clickonOrderStatus() {
         testHome.setOrderStatus();
     }
 
-    @Test
+    @Test(priority = 30)
     public void clickonShoppingHistory() {
         testHome.setShoppingHistory();
-        driver.navigate().to(url);
+
 
     }
 
-    @Test
+    @Test(priority = 31)
     public void clickonWeeklyad(){
         testHome.setWeeklyadd();
-        navigateBack();
     }
 
-    @Test
+    @Test(priority = 32)
     public void Searchitems2()throws Exception{
         testHome.setSearch("Laptop");
         String title = driver.getTitle();
         System.out.println(title);
-        navigateBack();
+
     }
 
-    @Test
+    @Test(priority = 33)
     public void Searchitems3()throws Exception{
         testHome.setSearch("Mobile phones");
         String currentUrl = driver.getCurrentUrl();
         System.out.println(currentUrl);
-        navigateBack();
+
     }
 
-    @Test
+    @Test(priority = 34)
     public void Searchitems4()throws Exception{
         testHome.setSearch("Ps4");
         driver.findElement(By.xpath("//*[@id='shop-sku-list-item-8653e092-ec40-40df-8a4a-56ef21da8277']/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/h4[1]/a[1]")).click();
 
-        driver.navigate().to(url);
+
     }
+
+
 
 
 
