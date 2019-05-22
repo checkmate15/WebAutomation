@@ -553,4 +553,5 @@ public class CommonAPI {
             System.out.println("CSS locator didn't work");
         }
     }
+
 }
