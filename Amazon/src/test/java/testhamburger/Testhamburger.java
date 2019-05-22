@@ -26,17 +26,33 @@ public class Testhamburger extends CommonAPI {
         driver.get(url);
     }
 
-    @Test(priority = 1)
+    @Test(priority = 14)
     public void clickonhamburger() {
         testamazon1.setHamburger();
     }
-    @Test(priority = 2)
+    @Test(priority = 15)
     public void clickonelectronics(){
         testamazon1.setElectronics();
     }
-    @Test(priority = 3)
+    @Test(priority = 16)
     public void clickonphones(){
         testamazon1.setPhones();
+    }
+    @Test(priority = 17)
+    public void clickonunlockedphones(){
+        testamazon1.setUnlockedphones();
+    }
+    @Test(priority = 18)
+    public void clickonblu(){
+        testamazon1.setBlu();
+    }
+    @Test(priority = 19)
+    public void clickonblumega(){
+        testamazon1.setBlumega();
+    }
+    @Test(priority = 20)
+    public void clickondisplay1(){
+        testamazon1.setDisplay1();
     }
 
 
