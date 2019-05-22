@@ -29,6 +29,20 @@ public class Hamburger extends CommonAPI {
     WebElement proceed;
     @FindBy(xpath = "//*[@id=\"ap_email\"]")
     WebElement email;
+    @FindBy(xpath = "//*[@id=\"ap_password\"]")
+    WebElement pass;
+    @FindBy(xpath = "//*[@class='a-button-input']")
+    WebElement signin;
+    @FindBy(xpath = "//*[@role='button']")
+    WebElement createac;
+    @FindBy(xpath = "//*[@name='customerName']")
+    WebElement yourname;
+    @FindBy(xpath = "//*[@type='email']")
+    WebElement email2;
+    @FindBy(xpath = "//*[@tabindex='5']")
+    WebElement pass2;
+    @FindBy(xpath = "//*[@tabindex='6']")
+    WebElement reenterpass;
 
 
 
@@ -66,5 +80,27 @@ public class Hamburger extends CommonAPI {
     public void setEmail(){
         email.click();
     }
+    public void setPass(){
+        pass.click();
+    }
+    public void setSignin(){
+        signin.click();
+    }
+    public void setCreateac(){
+        createac.click();
+    }
+    public void setYourname(){
+        yourname.click();
+    }
+    public void setEmail2(){
+        email2.click();
+    }
+    public void setPass2(){
+        pass2.click();
+    }
+    public void setReenterpass(){
+        reenterpass.click();
+    }
+
 
 }
