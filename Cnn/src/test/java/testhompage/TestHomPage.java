@@ -3,7 +3,7 @@ package testhompage;
 import base.CommonAPI;
 import hompage.Hompage;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import reporting.TestLogger;
@@ -21,7 +21,7 @@ public class TestHomPage extends CommonAPI {
         hmpage= PageFactory.initElements(driver, Hompage.class);
 
     }
-    @AfterMethod
+    @AfterClass
     public void init(){
         driver.get(hpgurl);
     }
