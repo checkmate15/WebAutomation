@@ -63,7 +63,7 @@ public class CommonAPI {
 
     @Parameters({"platform", "url", "browser", "cloud", "browserVersion", "envName"})
     @BeforeClass
-    public static WebDriver setupDriver(String platform,@Optional("url") String url, @Optional("chrome-options") String browser, @Optional("false") boolean cloud, String browserVersion,String envName) throws MalformedURLException {
+    public static WebDriver setupDriver(String platform, String url, @Optional("chrome-options") String browser, @Optional("false") boolean cloud, String browserVersion, String envName) throws MalformedURLException {
         if (cloud==true) {
             driver = getCloudDriver(browser, browserVersion, platform, envName);
         } else if (cloud==false){
@@ -109,7 +109,7 @@ public class CommonAPI {
      */
     public static WebDriver getLocalDriver(String browser, String platform) {
         if (platform.equalsIgnoreCase("mac") && browser.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver","../Generic/src/main/resources/drivers/chromedriver 2");
+            System.setProperty("webdriver.chrome.driver", "../Generic/src/main/resources/drivers/chromedriver");
         } else if (platform.equalsIgnoreCase("windows") && browser.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver", "../Generic/src/main/resources/drivers/chromedriver.exe");
         }
@@ -553,4 +553,5 @@ public class CommonAPI {
             System.out.println("CSS locator didn't work");
         }
     }
+
 }
