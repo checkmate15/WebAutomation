@@ -1,14 +1,11 @@
 package regerssionTest;
 
 import base.CommonAPI;
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import regression.EbaySearch;
-import reporting.TestLogger;
 
 public class TestEbaySearch extends CommonAPI {
 
@@ -21,6 +18,12 @@ public class TestEbaySearch extends CommonAPI {
         testEbay = PageFactory.initElements(driver, EbaySearch.class);
         driver.get(url);
         Thread.sleep(5000);
+    }
+
+
+    @AfterMethod
+    public void initialize() {
+        driver.get(url);
     }
 
     @Test(priority = 0)
@@ -65,6 +68,7 @@ public class TestEbaySearch extends CommonAPI {
     @Test(priority = 7)
     public void clickOnLastName() {
         testEbay.setLastName();
+
     }
     @Test(priority = 8)
     public void clickOnEmail() {
