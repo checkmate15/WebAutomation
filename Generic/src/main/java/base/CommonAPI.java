@@ -1,5 +1,4 @@
 package base;
-
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.LogStatus;
 import org.apache.commons.io.FileUtils;
@@ -554,4 +553,5 @@ public class CommonAPI {
             System.out.println("CSS locator didn't work");
         }
     }
+
 }

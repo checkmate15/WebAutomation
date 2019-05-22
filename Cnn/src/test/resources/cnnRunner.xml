@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="cnn" parallel="false">
+
+    <!--this Is connected to commenApi @peremetaraized-->
+    <parameter name="platform" value="windows"/>
+    <!-- this is the url where it will go..-->
+    <parameter name="url" value="https://www.cnn.com/"/>
+    <!-- This refers to browser names ,Chrome,Mozila,Opera etc.-->
+    <parameter name="browser" value="chrome"/>
+    <!-- This is for cloud if you perfer to run on cloud -->
+    <parameter name="cloud" value="false"/>
+    <!-- this refers to which version of the browser-->
+    <parameter name="browserVersion" value="74.0"/>
+    <!--Which env. want to run this project for example soucelab,browserstack etc..-->
+    <parameter name="envName" value="browserstack"/>
+    <!--for online purpose -->
+    <!--    <parameter name="os_version" value="Sierra"/>-->
+
+
+    <!-- This is just a class name -->
+    <test name="CnnHome">
+        <classes>
+            <!--Connected with testHompage package and relevent classe  -->
+            <class name="testhompage.TestHomPage"/>
+            <!--<class name="add more classes here"/>-->
+        </classes>
+    </test>
+</suite>
