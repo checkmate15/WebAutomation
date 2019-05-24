@@ -1,6 +1,7 @@
 package homepage;
 
 import base.CommonAPI;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -52,10 +53,19 @@ public class HomePage extends CommonAPI {
 
     public void setProduct(){
         product.click();
+        String checktext = driver.findElement(By.xpath("//*[@id='group0']/div[4]/div[1]/ul[1]/li[1]/a[1]/span[2]")).getText();
+        System.out.println(checktext);
     }
 
     public void setBrands(){
         brands.click();
+        driver.findElement(By.xpath("//*[@id='group1']/div[1]/ul[1]/li[1]/a[1]")).click();
+        driver.findElement(By.xpath("//*[@id='site-control-content']/div[2]/div[2]/div[4]/div[1]/div[1]/div[1]/div[2]/div[4]/a[1]/h2[1]")).click();
+        driver.findElement(By.xpath("//*[@class='btn btn-primary btn-sm btn-block btn-leading-ficon add-to-cart-button']")).click();
+        driver.findElement(By.xpath("//*[@id='header']/div[1]/div[2]/ul[1]/li[2]/a[1]")).click();
+
+        if (driver.findElement(By.xpath("//*[@id='cartApp']/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/a[1]")).isDisplayed())
+            System.out.println("cart checking Passed");
     }
 
     public void setDeals(){

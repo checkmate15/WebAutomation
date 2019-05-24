@@ -19,6 +19,12 @@ public class TestHomePage extends CommonAPI {
         Thread.sleep(5000);
 
     }
+    @AfterClass
+    public void quit(){
+        driver.quit();
+
+    }
+
     @AfterMethod
     public void initialize(){
         driver.get(url);
@@ -63,6 +69,7 @@ public class TestHomePage extends CommonAPI {
         System.out.println(source);
     }
 
+    //User must be able to click On Product Link
     @Test (priority = 4)
     public void clickOnproduct() {
         testHome.setProduct();
@@ -71,11 +78,11 @@ public class TestHomePage extends CommonAPI {
     @Test (priority = 5)
     public void checkproduct() {
         testHome.setProduct();
-        String checktext = driver.findElement(By.xpath("//*[@id='group0']/div[4]/div[1]/ul[1]/li[1]/a[1]/span[2]")).getText();
-        System.out.println(checktext);
+
     }
 
 
+    //User must be able to click On Brands Link
     @Test (priority = 6)
     public void clickonBrands() {
         testHome.setBrands();
@@ -84,16 +91,6 @@ public class TestHomePage extends CommonAPI {
     @Test (priority = 7)
     public void checkBrands() {
         testHome.setBrands();
-        driver.findElement(By.xpath("//*[@id='group1']/div[1]/ul[1]/li[1]/a[1]")).click();
-        driver.findElement(By.xpath("//*[@id='site-control-content']/div[2]/div[2]/div[4]/div[1]/div[1]/div[1]/div[2]/div[4]/a[1]/h2[1]")).click();
-        driver.findElement(By.xpath("//*[@class='btn btn-primary btn-sm btn-block btn-leading-ficon add-to-cart-button']")).click();
-        driver.findElement(By.xpath("//*[@id='header']/div[1]/div[2]/ul[1]/li[2]/a[1]")).click();
-
-        if (driver.findElement(By.xpath("//*[@id='cartApp']/div[1]/div[1]/div[1]/div[1]/span[1]/div[1]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/a[1]")).isDisplayed())
-        System.out.println("cart checking Passed");
-
-
-
     }
 
     @Test (priority = 8)
@@ -203,7 +200,7 @@ public class TestHomePage extends CommonAPI {
     @Test (priority = 20)
     public void CheckDownloadpageandroid(){
         testHome.setBestbuyApp();
-        driver.findElement(By.xpath("//*[@id='//*[@id=\"site-control-content\"]/div[2]/div[2]/div/div/div/div/div[2]/div/div[1]/div/a[2]/img")).click();
+        driver.findElement(By.xpath("//*[@id='//*[@id='site-control-content']/div[2]/div[2]/div/div/div/div/div[2]/div/div[1]/div/a[2]/img")).click();
         String androidurl = driver.getCurrentUrl();
         String expectedurl = "https://play.google.com/store/apps/details?id=com.bestbuy.android&hl=en";
 
