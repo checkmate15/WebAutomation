@@ -31,7 +31,7 @@ public class Testhamburger extends CommonAPI {
         testamazon1.setHamburger();
     }
     @Test(priority = 15)
-    public void clickonelectronics(){
+    public void clickonelectronics() {
         testamazon1.setElectronics();
     }
     @Test(priority = 16)
