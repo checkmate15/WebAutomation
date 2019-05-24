@@ -42,12 +42,7 @@ public class TestBrands extends CommonAPI {
 
     @Test(priority = 42)
     public void verifiedsmarthome() {
-        testBrands.setSmarthome();
-        String url = driver.getCurrentUrl();
-        String title = driver.getTitle();
-
-        System.out.println(url);
-        System.out.println(title);
+        testBrands.setsmarttitle();
     }
 
     @Test(priority = 43)

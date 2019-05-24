@@ -40,4 +40,13 @@ public class Brands extends CommonAPI {
         smarthome.click();
     }
 
+    public void setsmarttitle() {
+        brands.click();
+        String url = driver.getCurrentUrl();
+        String title = driver.getTitle();
+
+        System.out.println(url);
+        System.out.println(title);
+    }
+
 }
