@@ -30,6 +30,7 @@ public class Todaysdeal extends CommonAPI {
 
 
 
+
     public void setTodaysdeal(){
         todaysdeal.click();
     }
