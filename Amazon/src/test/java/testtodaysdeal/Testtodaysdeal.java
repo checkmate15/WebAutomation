@@ -10,11 +10,11 @@ import org.testng.annotations.Test;
 public class Testtodaysdeal extends CommonAPI {
 
     String url = "https://www.amazon.com/";
-    Todaysdeal testamazon2;
+    Todaysdeal testdeals;
 
     @BeforeClass
     public void initialize() {
-        testamazon2 = PageFactory.initElements(driver,Todaysdeal .class);
+        testdeals = PageFactory.initElements(driver,Todaysdeal .class);
         driver.get(url);
 
 
@@ -27,43 +27,43 @@ public class Testtodaysdeal extends CommonAPI {
     }
     @Test(priority = 31)
     public void clickontodaysdeal(){
-        testamazon2.setTodaysdeal();
+        testdeals.setTodaysdeal();
     }
     @Test(priority = 32)
     public void clickonamazondevice(){
-        testamazon2.setAmazondevice();
+        testdeals.setAmazondevice();
     }
     @Test(priority = 33)
     public void clickonclear(){
-        testamazon2.setClear();
+        testdeals.setClear();
     }
     @Test(priority = 34)
     public void clickoncamera(){
-        testamazon2.setCamera();
+        testdeals.setCamera();
     }
     @Test(priority = 35)
     public void clickondiscount(){
-        testamazon2.setDiscount();
+        testdeals.setDiscount();
     }
     @Test(priority = 36)
     public void clickondiscountitem(){
-        testamazon2.setDiscountitem();
+        testdeals.setDiscountitem();
     }
     @Test(priority = 37)
     public void clickonaddtolist(){
-        testamazon2.setAddtolist();
+        testdeals.setAddtolist();
     }
     @Test(priority = 38)
     public void clickonforgetpass(){
-        testamazon2.setForgetpass();
+        testdeals.setForgetpass();
     }
     @Test(priority = 39)
     public void clickonenterphone(){
-        testamazon2.setEnterphone();
+        testdeals.setEnterphone();
     }
     @Test(priority = 40)
     public void clickonenter(){
-        testamazon2.setEnter();
+        testdeals.setEnter();
     }
 
 

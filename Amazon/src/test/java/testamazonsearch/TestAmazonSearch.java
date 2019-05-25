@@ -11,11 +11,11 @@ import org.testng.annotations.Test;
 public class TestAmazonSearch extends CommonAPI {
 
     String url = "https://www.amazon.com/";
-    AmazonSearch testamazon3;
+    AmazonSearch testsearch;
 
     @BeforeClass
     public void initialize() throws Exception {
-        testamazon3 = PageFactory.initElements(driver,AmazonSearch .class);
+        testsearch = PageFactory.initElements(driver,AmazonSearch .class);
         driver.get(url);
 
 
@@ -29,11 +29,16 @@ public class TestAmazonSearch extends CommonAPI {
     }
     @Test(priority = 41)
     public void clickonsearchbutton(){
-        testamazon3.setSearchButton("iphones");
+        testsearch.setSearchButton("iphones");
     }
     @Test(priority = 42)
     public void clickongo(){
-        testamazon3.setGo();
+        testsearch.setGo();
+        driver.navigate().to(url);
+    }
+    @Test(priority = 43)
+    public void clickonsearch(){
+        testsearch.setSearch();
     }
 
 

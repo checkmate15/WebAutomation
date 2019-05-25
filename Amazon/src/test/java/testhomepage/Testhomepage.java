@@ -9,12 +9,12 @@ import org.testng.annotations.Test;
 
 public class Testhomepage extends CommonAPI {
     String url = "https://www.amazon.com/";
-    Homepage testamazon;
+    Homepage  testhomepage;
 
 
     @BeforeClass
     public void initialize() {
-        testamazon = PageFactory.initElements(driver, Homepage.class);
+        testhomepage = PageFactory.initElements(driver, Homepage.class);
         driver.get(url);
 
 
@@ -28,87 +28,87 @@ public class Testhomepage extends CommonAPI {
 
     @Test(priority = 1)
     public void clickonsearch() {
-        testamazon.setSearch();
+        testhomepage.setSearch();
 
     }
 
     @Test(priority = 2)
     public void clickonhamburger() {
-        testamazon.setHamburger();
+        testhomepage.setHamburger();
         driver.navigate().to(url);
     }
 
     @Test(priority = 2)
     public void clickonorderTab() {
-        testamazon.setOrderTab();
+        testhomepage.setOrderTab();
         driver.navigate().to(url);
     }
 
     @Test(priority = 3)
     public void clickonsellTab() {
-        testamazon.setSellTab();
+        testhomepage.setSellTab();
         driver.navigate().to(url);
     }
 
     @Test(priority = 4)
     public void clickonregistryTab() {
-        testamazon.setRegistryTab();
+        testhomepage.setRegistryTab();
         driver.navigate().to(url);
     }
 
     @Test(priority = 5)
     public void clickonhelpTab() {
-        testamazon.setHelpTab();
+        testhomepage.setHelpTab();
         driver.navigate().to(url);
     }
 
     @Test(priority = 6)
     public void clickongiftcards() {
-        testamazon.setGiftcards();
+        testhomepage.setGiftcards();
         driver.navigate().to(url);
     }
 
     @Test(priority = 7)
     public void clickontodaysdeals() {
-        testamazon.setTodaysdeals();
+        testhomepage.setTodaysdeals();
         driver.navigate().to(url);
     }
 
     @Test(priority = 8)
     public void clickonyourorders() {
-        testamazon.setYourorders();
+        testhomepage.setYourorders();
         driver.navigate().to(url);
     }
 
     @Test(priority = 9)
     public void clickontryprime() {
-        testamazon.setTryprime();
+        testhomepage.setTryprime();
         driver.navigate().to(url);
     }
 
     @Test(priority = 10)
     public void clickoncart() {
-        testamazon.setCart();
+        testhomepage.setCart();
         driver.navigate().to(url);
 
     }
 
     @Test(priority = 11)
     public void clickonaccount() {
-        testamazon.setAccount();
+        testhomepage.setAccount();
         driver.navigate().to(url);
 
     }
 
     @Test(priority = 12)
     public void clickonyouramazon() {
-        testamazon.setYouramazon();
+        testhomepage.setYouramazon();
         driver.navigate().to(url);
     }
 
     @Test(priority = 13)
     public void clickonshopdeals() {
-        testamazon.setShopdeals();
+        testhomepage.setShopdeals();
         driver.navigate().to(url);
     }
 
