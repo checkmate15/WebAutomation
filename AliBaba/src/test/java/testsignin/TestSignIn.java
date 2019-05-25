@@ -28,24 +28,13 @@ public class TestSignIn extends CommonAPI {
     @AfterClass
     public void init(){
         driver.get(url);
-
-
-
     }
     @Test
-    public void setTestsignin(){
-        WebElement element = driver.findElement(By.linkText("My Alibaba"));
-        Actions action = new Actions(driver);
-        action.moveToElement(element).build().perform();
-        driver.findElement(By.linkText("Sign In")).click();
+    public void SignIn(){
 
-        sleepFor(5);
-
-
-
-
-
-        }
+        testsignin.ClickSignIn();
+        testsignin.signIN();
+    }
 
 
 
