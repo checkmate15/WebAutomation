@@ -34,6 +34,16 @@ public class AmazonSearch extends CommonAPI {
        clickByXpath("//*[@id=\"twotabsearchtextbox\"]");
 
     }
+    public void settype(String name) throws Exception{
+        clickByXpath("//*[@id=\"twotabsearchtextbox\"]");
+        if (SearchButton.isEnabled())
+            SearchButton.sendKeys(name, Keys.ENTER);
+        Thread.sleep(5000);
+    }
+    public void setRun(){
+        clickByXpath("//*[@tabindex='20']");
+    }
+
 
 
 

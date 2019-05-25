@@ -40,6 +40,15 @@ public class TestAmazonSearch extends CommonAPI {
     public void clickonsearch(){
         testsearch.setSearch();
     }
+    @Test(priority = 44)
+    public void clickontype() throws Exception {
+        testsearch.settype("samsung");
+
+    }
+    @Test(priority = 45)
+    public void clickonrun() {
+        testsearch.setRun();
+    }
 
 
 }
