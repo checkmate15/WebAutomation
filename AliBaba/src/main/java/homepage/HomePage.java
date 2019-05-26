@@ -153,7 +153,8 @@ public class HomePage extends CommonAPI {
 
     }
 
-    public void setRandomtab2(){randomtab2.click();}
+    public void setRandomtab2(){
+        randomtab2.click();}
 
 
 
