@@ -10,11 +10,11 @@ import org.testng.annotations.Test;
 public class Testhamburger extends CommonAPI {
 
     String url = "https://www.amazon.com/";
-    Hamburger testamazon1;
+    Hamburger testhamburger;
 
     @BeforeClass
     public void initialize() {
-        testamazon1 = PageFactory.initElements(driver,Hamburger .class);
+        testhamburger = PageFactory.initElements(driver,Hamburger .class);
         driver.get(url);
 
 
@@ -28,35 +28,35 @@ public class Testhamburger extends CommonAPI {
 
     @Test(priority = 14)
     public void clickonhamburger() {
-        testamazon1.setHamburger();
+        testhamburger.setHamburger();
     }
     @Test(priority = 15)
     public void clickonelectronics() {
-        testamazon1.setElectronics();
+        testhamburger.setElectronics();
     }
     @Test(priority = 16)
     public void clickonphones(){
-        testamazon1.setPhones();
+        testhamburger.setPhones();
     }
     @Test(priority = 17)
     public void clickonunlockedphones(){
-        testamazon1.setUnlockedphones();
+        testhamburger.setUnlockedphones();
     }
     @Test(priority = 18)
     public void clickonblu(){
-        testamazon1.setBlu();
+        testhamburger.setBlu();
     }
     @Test(priority = 19)
     public void clickonblumega(){
-        testamazon1.setBlumega();
+        testhamburger.setBlumega();
     }
     @Test(priority = 20)
     public void clickonaddtocart(){
-        testamazon1.setAddtocart();
+        testhamburger.setAddtocart();
     }
     @Test(priority = 21)
     public void clickonnothanks(){
-        testamazon1.setNothanks();
+        testhamburger.setNothanks();
     }
    // @Test(priority = 22)
     //public void clickoncart(){
@@ -64,40 +64,41 @@ public class Testhamburger extends CommonAPI {
     //}
     @Test(priority = 22)
     public void clickonproceed(){
-        testamazon1.setProceed();
+        testhamburger.setProceed();
     }
     @Test(priority = 23)
     public void clickonemail(){
-        testamazon1.setEmail();
+        testhamburger.setEmail();
     }
     @Test(priority = 24)
     public void clickonpass(){
-        testamazon1.setPass();
+        testhamburger.setPass();
     }
     @Test(priority = 25)
     public void clickonsignin(){
-        testamazon1.setSignin();
+        testhamburger.setSignin();
     }
     @Test(priority = 26)
     public void clickoncreateac(){
-        testamazon1.setCreateac();
+        testhamburger.setCreateac();
     }
     @Test(priority = 27)
     public void clickonyourname(){
-        testamazon1.setYourname();
+        testhamburger.setYourname();
     }
     @Test(priority = 28)
     public void clickonemail2(){
-        testamazon1.setEmail2();
+        testhamburger.setEmail2();
     }
     @Test(priority = 29)
     public void clickonpass2(){
-        testamazon1.setPass2();
+        testhamburger.setPass2();
     }
     @Test(priority = 30)
     public void clickonreenterpass(){
-        testamazon1.setReenterpass();
+        testhamburger.setReenterpass();
     }
+
 
 
 

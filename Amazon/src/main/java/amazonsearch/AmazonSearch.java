@@ -1,9 +1,11 @@
 package amazonsearch;
 
 import base.CommonAPI;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 
 
 public class AmazonSearch extends CommonAPI {
@@ -18,6 +20,7 @@ public class AmazonSearch extends CommonAPI {
         SearchButton.sendKeys(name, Keys.ENTER);
 
     }
+
     public void setSearchItem(String text) throws Exception {
         if (SearchButton.isEnabled())
             SearchButton.sendKeys(text, Keys.ENTER);
@@ -27,6 +30,21 @@ public class AmazonSearch extends CommonAPI {
     public void setGo(){
         go.click();
     }
+    public void setSearch (){
+       clickByXpath("//*[@id=\"twotabsearchtextbox\"]");
+
+    }
+    public void settype(String name) throws Exception{
+        clickByXpath("//*[@id=\"twotabsearchtextbox\"]");
+        if (SearchButton.isEnabled())
+            SearchButton.sendKeys(name, Keys.ENTER);
+        Thread.sleep(5000);
+    }
+    public void setRun(){
+        clickByXpath("//*[@tabindex='20']");
+    }
+
+
 
 
     }
