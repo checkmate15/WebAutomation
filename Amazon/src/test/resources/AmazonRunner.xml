@@ -15,7 +15,8 @@
 <!--            <class name="testhomepage.Testhomepage"/>-->
 <!--            <class name="testhamburger.Testhamburger"/>-->
 <!--            <class name="testtodaysdeal.Testtodaysdeal"/>-->
-            <class name="testamazonsearch.TestAmazonSearch"/>
+            <class name="testsignin.TestSignIn"/>
+<!--            <class name="testsignin.TestSignIn"/>-->
 
 
         </classes>

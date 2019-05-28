@@ -27,28 +27,30 @@ public class TestAmazonSearch extends CommonAPI {
         driver.get(url);
 
     }
-    @Test(priority = 41)
-    public void clickonsearchbutton(){
-        testsearch.setSearchButton("iphones");
-    }
-    @Test(priority = 42)
-    public void clickongo(){
-        testsearch.setGo();
-        driver.navigate().to(url);
-    }
-    @Test(priority = 43)
-    public void clickonsearch(){
-        testsearch.setSearch();
-    }
+//    @Test(priority = 41)
+//    public void clickonsearchbutton(){
+//        testsearch.setSearchButton("iphones");
+//    }
+//    @Test(priority = 42)
+//    public void clickongo(){
+//        testsearch.setGo();
+//        driver.navigate().to(url);
+//    }
+//    @Test(priority = 43)
+//    public void clickonsearch(){
+//        testsearch.setSearch();
+//    }
     @Test(priority = 44)
-    public void clickontype() throws Exception {
+    public void clickontype()  {
         testsearch.settype("samsung");
 
     }
-    @Test(priority = 45)
-    public void clickonrun() {
-        testsearch.setRun();
-    }
+//    @Test(priority = 45)
+//    public void clickonrun() {
+//        testsearch.setRun();
+//    }
+
+
 
 
 }

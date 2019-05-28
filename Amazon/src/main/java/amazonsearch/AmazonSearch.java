@@ -16,33 +16,34 @@ public class AmazonSearch extends CommonAPI {
     WebElement go;
 
 
-    public void setSearchButton(String name) {
-        SearchButton.sendKeys(name, Keys.ENTER);
+//    public void setSearchButton(String name) {
+//        SearchButton.sendKeys(name, Keys.ENTER);
 
-    }
+//    }
 
-    public void setSearchItem(String text) throws Exception {
-        if (SearchButton.isEnabled())
-            SearchButton.sendKeys(text, Keys.ENTER);
-        Thread.sleep(5000);
+//    public void setSearchItem(String text) throws Exception {
+//        if (SearchButton.isEnabled())
+//            SearchButton.sendKeys(text, Keys.ENTER);
+//        Thread.sleep(5000);
 
-    }
-    public void setGo(){
-        go.click();
-    }
-    public void setSearch (){
-       clickByXpath("//*[@id=\"twotabsearchtextbox\"]");
+//    }
+//    public void setGo(){
+//        go.click();
+//    }
+//    public void setSearch (){
+//       clickByXpath("//*[@id=\"twotabsearchtextbox\"]");
 
-    }
-    public void settype(String name) throws Exception{
+//    }
+    public void settype(String name) {
         clickByXpath("//*[@id=\"twotabsearchtextbox\"]");
         if (SearchButton.isEnabled())
             SearchButton.sendKeys(name, Keys.ENTER);
-        Thread.sleep(5000);
-    }
-    public void setRun(){
         clickByXpath("//*[@tabindex='20']");
+//       Thread.sleep(5000);
     }
+//    public void setRun(){
+//        clickByXpath("//*[@tabindex='20']");
+//    }
 
 
 
